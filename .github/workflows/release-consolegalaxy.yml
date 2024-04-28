@@ -22,7 +22,7 @@ jobs:
           exit 1
         fi
     - name: Upload artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: ConsoleGalaxy-${{ github.ref_name }}
         path: |
@@ -35,21 +35,39 @@ jobs:
           consolegalaxy.version
           mod_info.json
           icon.png
+          !.git
+          !.github
+          !.gradle
+          !.idea
+          !.run
+          !build
+          !libs
+          !readme_resources
+          !out
     - name: list files tag:1
-      run: ls -l
-  update_release_draft:
+      run: |
+        cd ..
+        ls -R
+  uploadzip:
     needs: build
-    permissions:
-        # write permission is required to create a github release
-        contents: write
-        # write permission is required for autolabeler
-        # otherwise, read permission is required at least
-        pull-requests: write
     runs-on: ubuntu-latest
     steps:
-      # Drafts the next Release notes as Pull Requests are merged into "master"
-      - uses: release-drafter/release-drafter@v5
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Download artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: ConsoleGalaxy-${{ github.ref_name }}
+        path: artifact
+    - name: Create zip
+      run: |
+        cd artifact
+        zip -r ConsoleGalaxy-${{ github.ref_name }}.zip *
+    - name: Upload zip
+      uses: actions/upload-artifact@v2
+      with:
+        name: ConsoleGalaxy-${{ github.ref_name }}-zip
+        path: artifact/ConsoleGalaxy-${{ github.ref_name }}.zip
+    - name: list files tag:2
+      run: ls -R
+
 
 
