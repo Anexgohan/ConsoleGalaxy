@@ -35,7 +35,10 @@ jobs:
           consolegalaxy.version
           mod_info.json
           icon.png
+    - name: list files tag:1
+      run: ls -l
   update_release_draft:
+    needs: build
     permissions:
         # write permission is required to create a github release
         contents: write
