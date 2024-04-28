@@ -60,7 +60,7 @@ jobs:
         release_name: ConsoleGalaxy-${{ github.ref_name }}
         draft: false
         prerelease: false
-        body_path: CHANGELOG.md
+        #body_path: CHANGELOG.md
     
     - name: Realease to Github Releases
       uses: ncipollo/release-action@v1
