@@ -45,6 +45,7 @@ jobs:
 
     - name: Create changes log
       run: |
+        cd $GITHUB_WORKSPACE
         git-chglog -o CHANGELOG.md
 
     - name: Create release notes
