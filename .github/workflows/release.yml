@@ -124,6 +124,8 @@ jobs:
       - uses: actions/checkout@v3
         with:
           clean: false
+      - name: tag:6
+        run: ls -R
       - name: Realease to Github Releases
         uses: ncipollo/release-action@v1
         with:
@@ -131,6 +133,8 @@ jobs:
           artifacts: ConsoleGalaxy-${{ github.ref_name }}.zip         # Release File name
           token: ${{ secrets.GITHUB_TOKEN }}
           generateReleaseNotes: true
+      - name: tag:7
+        run: ls -R
       - name: check ncipollo file log
         run: |
           cd
