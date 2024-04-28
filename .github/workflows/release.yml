@@ -111,7 +111,7 @@ jobs:
       - uses: papeloto/action-zip@v1
         with:
           files: consolegalaxy_zipFolder/
-          dest: consolegalaxy-${{ github.ref_name }}.zip
+          dest: ConsoleGalaxy-${{ github.ref_name }}.zip
       # generates list of all files in root directory, download log from actions tab in github to view
       - name: check thedoctor0 zip file log tag:4
         run: ls -R
@@ -124,8 +124,6 @@ jobs:
       - uses: actions/checkout@v3
         with:
           clean: false
-      - name: tag:6
-        run: ls -R
       - name: Realease to Github Releases
         uses: ncipollo/release-action@v1
         with:
@@ -135,7 +133,7 @@ jobs:
           generateReleaseNotes: true
       - name: tag:7
         run: ls -R
-      - name: check ncipollo file log
+      - name: check tag:8
         run: |
-          cd
+          cd ..
           ls -R
