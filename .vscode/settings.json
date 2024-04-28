@@ -1,0 +1,33 @@
+{
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "out\\vscode\\bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "d:\\Games\\Space-4x\\Starsector-mod-dev\\starsector-core\\starfarer.api.jar",
+        "d:\\Games\\Space-4x\\Starsector-mod-dev\\starsector-core\\lwjgl.jar",
+        "d:\\Games\\Space-4x\\Starsector-mod-dev\\starsector-core\\lwjgl_util.jar",
+        "d:\\Games\\Space-4x\\Starsector-mod-dev\\starsector-core\\xstream-1.4.10.jar",
+        "d:\\Games\\Space-4x\\Starsector-mod-dev\\starsector-core\\log4j-1.2.9.jar",
+        "d:\\Games\\Space-4x\\Starsector-mod-dev\\starsector-core\\json.jar",
+        "d:\\Games\\Space-4x\\Starsector-mod-dev\\mods\\LazyLib\\jars\\LazyLib.jar",
+        "d:\\Games\\Space-4x\\Starsector-mod-dev\\mods\\LazyLib\\jars\\LazyLib-Console.jar",
+        "d:\\Games\\Space-4x\\Starsector-mod-dev\\mods\\MagicLib\\jars\\MagicLib.jar",
+        "d:\\Games\\Space-4x\\Starsector-mod-dev\\mods\\GraphicsLib\\jars\\Graphics.jar",
+        "d:\\Games\\Space-4x\\Starsector-mod-dev\\mods\\Console Commands\\jars\\lw_Console.jar"
+    ],
+    "java.configuration.runtimes": [
+        {
+            "name":"JavaSE-17",
+            "path":"d:\\Games\\Space-4x\\Starsector-mod-dev\\java-dev\\azul-17.0.10",
+        },
+        {
+            "name":"JavaSE-1.7",
+            "path":"d:\\Games\\Space-4x\\Starsector-mod-dev\\java-dev\\JDK7",
+        },
+        {
+            "name":"JavaSE-1.8",
+            "path":"d:\\Games\\Space-4x\\Starsector-mod-dev\\java-dev\\azul-1.8.0_402",
+            "default": true
+        }
+    ]
+}

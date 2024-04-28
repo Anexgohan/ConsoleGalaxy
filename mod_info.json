@@ -1,14 +1,14 @@
 {
-    "id": "exploration",
-    "name": "Explore the Galaxy",
-    "author": "hypocrisy-aeron",
+    "id": "consolegalaxy",
+    "name": "Console Galaxy",
+    "author": "anex",
     "utility": "true",
-    "version": "1.2.3",
-    "description": "Enables the player to search for systems with a certain number of planets and conditions.",
-    "gameVersion": "0.95a-RC15",
+    "version": { "major": "1", "minor": "0", "patch": "0a" },
+    "description": "Search for systems with a certain number of planets and conditions, using Command Console",
+    "gameVersion": "0.97a-RC11",
     "dependencies":  [
       {"id": "lw_console", "name": "Console Commands"}
     ],
-    "jars": ["jars/Exploration.jar"],
-    "modPlugin": "Exploration.scripts.ExplorationModPlugin"
+    "jars": ["jars/consolegalaxy.jar"],
+    "modPlugin": "consolegalaxy.scripts.ExplorationModPlugin"
 }

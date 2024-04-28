@@ -1,0 +1,124 @@
+Title:
+VSCode setup for Starsector modding
+
+Content:
+This guide will help you set up Visual Studio Code for Starsector modding. 
+It will cover setting up the IDE, installing the required extensions, and configuring the build tasks.
+
+Steps:
+
+(A). 
+Setting up Java 1.7 (you can skip this step if you already have Java 1.7 installed) =>
+Note: you can use any java version from 1.7, 1.8, till java 17, but 1.7 is recommended for Starsector modding.
+
+1. Install Java 1.7 from [Java 1.7]
+https://drive.google.com/open?id=1cle4yGhPkROCu3z5WKHKLR098ObGLwPV
+Link Provided by the [Starsector Wiki]
+https://starsector.fandom.com/wiki/Modding:Modding_Tools#Java_1.7
+
+2. Extract the downloaded JDK7.zip to a folder. 
+        For example the default java directory, 
+        ```C:\Program Files\Java\JDK7```.
+
+(B). 
+Installing Visual Studio Code =>
+1. Install Visual Studio Code from [VSCODE]
+https://code.visualstudio.com/
+
+2. Open Visual Studio Code. Go to the Extensions tab on the left sidebar and install the following extensions:
+    - Extension Pack for Java by Microsoft (Java Extension Pack) - This extension pack includes the following extensions:
+        * Language Support for Java(TM) by Red Hat
+        * Debugger for Java
+        * Test Runner for Java
+        * Maven for Java
+        * Project Manager for Java
+        * Visual Studio IntelliCode (optional/not required/safe to uninstall)
+https://i.imgur.com/zJTYtTk.png
+
+3. Press `Ctrl + Shift + P` to open the command palette and type `Java: Create Java Project`. 
+        Select `Create Java Project` from the list.
+https://i.imgur.com/vWE96x6.png
+
+4. Select `No build tools` and press Enter.
+
+5. Select the mods folder inside the Starscetor installation folder as the project folder. 
+        The path should look like this:
+        ```Starsector\mods```
+
+6. Enter the project name. The project name should be the name of the mod you are creating. 
+        For example, if you are creating a mod called `MyMod`,  enter `MyMod` as the project name.
+        The folder structure should end up looking like this:
+        ```Starsector\mods\MyMod```
+7. This will create the following files and folders inside the `MyMod` folder. This will start you up with a basic mod structure.
+        - .vscode
+            - settings.json
+        - lib
+        - src
+        - README.md
+Note: 
+settings.json - This contains the configuration related to VSCode within the project
+src - You will be writing your code in this folder, this is where the mod's source code goes, 
+        anyone with this folder and the files contained inside it should be able to compile the mod
+https://i.imgur.com/pobpMma.png
+
+8. Open the `MyMod` folder in Visual Studio Code. File -> Open Folder -> Select the `MyMod` folder. This should load the project in VSCode.
+
+9. In VSCode click on 'settings.json' in the .vscode folder. 
+        Delete everything inside settings.json, Copy and Paste the following configuration to the settings.json file: 
+```
+{
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "out\\vscode\\bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "d:\\Starsector\\starsector-core\\starfarer.api.jar",
+        "d:\\Starsector\\starsector-core\\lwjgl.jar",
+        "d:\\Starsector\\starsector-core\\lwjgl_util.jar",
+        "d:\\Starsector\\starsector-core\\xstream-1.4.10.jar",
+        "d:\\Starsector\\mods\\LazyLib\\jars\\LazyLib.jar",
+        "d:\\Starsector\\mods\\MagicLib\\jars\\MagicLib.jar",
+        "d:\\Starsector\\mods\\zz GraphicsLib\\jars\\Graphics.jar"
+    ],
+    "java.configuration.runtimes": [
+        {
+            "name":"JavaSE-1.7",
+            "path":"C:\\Program Files\\Java\\JDK7",
+            "default": true
+        }
+    ]
+}
+```
+Note: this assumes that you have installed Starsector in the `D:\Starsector` directory. 
+        If you have installed Starsector in a different directory, 
+        you will need to update the paths in the `java.project.referencedLibraries` section.
+https://i.imgur.com/bA6glv8.png
+
+You can add more libraries by also clicking on the `Add` button next to "Refrenced Libraries" tab
+https://i.imgur.com/1gk4jdc.png
+
+10. Save the settings.json file and restart VSCode and load the 'MyMod' project again.
+
+(C). 
+work on the mod =>
+1. Start coding your mod in the `src` folder. Once you click any .java file in the `src` folder, 
+        A new drop-down will appear at the left panel of the VSCode window called
+        ```Java Projects```. 
+        Click on the `MyMod` project to see the project structure.
+https://i.imgur.com/zavgbkV.png
+
+2. Change the output folder of the compiled .jar file
+        - Goto File -> Preferences -> Settings
+        - Search for `Export Jar: Target Path`
+        Change:
+        ```${workspaceFolder}/${workspaceFolderBasename}.jar```
+        to
+        ```${workspaceFolder}/jars/${workspaceFolderBasename}.jar```
+        in either 'User' or 'Workspace' settings
+        you can also change the '${workspaceFolderBasename}' to anything you want. e.g. 
+        ```${workspaceFolder}/jars/mymod.jar```
+https://i.imgur.com/J845ryN.png
+
+To Build the MyMod.jar file =>
+3. click the `Run Build Task` button '->' at the bottom of the window, next to `Java Projects`
+
+Congratulations you have successfully set up Visual Studio Code for Starsector modding.
