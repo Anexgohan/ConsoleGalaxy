@@ -76,12 +76,12 @@ jobs:
             !build
             !libs
             !readme_resources
-      #      - name: List all upload-artifact folders only
-      #        run: ls -R
-      #      - name: check upload-artifact file log
-      #        run: |
-      #          cd
-      #          ls -R
+      - name: List all upload-artifact folders only tag:1
+        run: ls -R
+      - name: check upload-artifact file log tag:2
+        run: |
+          cd
+          ls -R
       # --------------------  copy server folder to working folder --------------------
       - uses: actions/checkout@v3
         with:
