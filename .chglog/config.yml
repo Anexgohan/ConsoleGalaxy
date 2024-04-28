@@ -1,0 +1,16 @@
+style: github
+template: |
+  ## {{ .Tag.Name }}
+  {{ range .CommitGroups -}}
+  {{ range .Commits -}}
+  * {{ .Header }}
+  {{ end }}
+  {{ end }}
+options:
+  commits:
+    filters:
+      Type:
+        - feat
+        - fix
+        - perf
+        - refactor
