@@ -41,13 +41,31 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     permissions:
-        # write permission is required to create a github release
         contents: write
-        # write permission is required for autolabeler
-        # otherwise, read permission is required at least
         pull-requests: write
     steps:
-      - name: Draft Release
-        uses: release-drafter/release-drafter@v6
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: true
+          prerelease: false
+
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: ConsoleGalaxy-${{ github.ref_name }}
+
+      - name: Upload artifact to release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./ConsoleGalaxy-${{ github.ref_name }}
+          asset_name: ConsoleGalaxy-${{ github.ref_name }}
+          asset_content_type: application/zip
