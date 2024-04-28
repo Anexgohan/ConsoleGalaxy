@@ -60,7 +60,7 @@ jobs:
         with:
           name: ConsoleGalaxy-${{ github.ref_name }}
 
-      - name: Upload artifact to release
+      - name: Upload artifact to the release
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
