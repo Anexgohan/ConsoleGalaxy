@@ -37,25 +37,17 @@ jobs:
           mod_info.json
           icon.png
 
-    - name: Setup git-chglog
-      run: |
-        curl -L https://github.com/git-chglog/git-chglog/releases/download/0.9.1/git-chglog_linux_amd64 -o git-chglog
-        chmod +x git-chglog
-        sudo mv git-chglog /usr/local/bin/
-
-    - name: Create changes log
-      run: |
-        cd $GITHUB_WORKSPACE
-        git-chglog -o CHANGELOG.md
-
-    - name: Create release notes
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tag_name: ${{ github.ref }}
-        release_name: Release ${{ github.ref }}
-        body_path: CHANGELOG.md
-        draft: false
-        prerelease: false
+  draft_release_notes:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+        # write permission is required to create a github release
+        contents: write
+        # write permission is required for autolabeler
+        # otherwise, read permission is required at least
+        pull-requests: write
+    steps:
+      - name: Draft Release
+        uses: release-drafter/release-drafter@v6
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,14 +1,14 @@
 {
     "masterVersionFile":"https://raw.githubusercontent.com/Anexgohan/ConsoleGalaxy/master/consolegalaxy.version",
     "modName":"Console Galaxy",
-    "modThreadId":24084,
+    "modThreadId":29835,
 	#"modNexusId":0,
     "modVersion":
     {
         "major":1,
         "minor":0,
-        "patch":2,
+        "patch":6,
     },
     # Optional support for mod managers to allow users to update with one click, without visiting a mod page.
-    "directDownloadURL": "https://github.com/Anexgohan/ConsoleGalaxy/releases/download/v1.0.2/Anexweapons-v1.0.2.zip"
+    "directDownloadURL": "https://github.com/Anexgohan/ConsoleGalaxy/releases/download/v1.0.6/Anexweapons-v1.0.6.zip"
 }
