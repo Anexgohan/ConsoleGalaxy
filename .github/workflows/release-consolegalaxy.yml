@@ -21,6 +21,7 @@ jobs:
           echo "This is not a release tag. Exiting..."
           exit 1
         fi
+    - run: mkdir ConsoleGalaxy_zipFolder
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
@@ -48,26 +49,24 @@ jobs:
       run: |
         cd ..
         ls -R
-  uploadzip:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-    - name: Download artifact
-      uses: actions/download-artifact@v4
+    
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
       with:
-        name: ConsoleGalaxy-${{ github.ref_name }}
-        path: artifact
-    - name: Create zip
-      run: |
-        cd artifact
-        zip -r ConsoleGalaxy-${{ github.ref_name }}.zip *
-    - name: Upload zip
-      uses: actions/upload-artifact@v2
+        tag_name: ${{ github.ref }}
+        release_name: ConsoleGalaxy-${{ github.ref_name }}
+        draft: false
+        prerelease: false
+        body_path: CHANGELOG.md
+    
+    - name: Realease to Github Releases
+      uses: ncipollo/release-action@v1
       with:
-        name: ConsoleGalaxy-${{ github.ref_name }}-zip
-        path: artifact/ConsoleGalaxy-${{ github.ref_name }}.zip
-    - name: list files tag:2
-      run: ls -R
-
-
-
+        name: ConsoleGalaxy-${{ github.ref_name }}             # Release post Title Name
+        artifacts: ConsoleGalaxy-${{ github.ref_name }}.zip         # Release File name
+        token: ${{ secrets.GITHUB_TOKEN }}
+        generateReleaseNotes: true
+      
