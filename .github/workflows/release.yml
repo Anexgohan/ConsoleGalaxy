@@ -94,7 +94,7 @@ jobs:
           path: "${{ github.workspace }}/consolegalaxy_zipFolder/Console Galaxy"               # ${{ github.workspace }}/consolegalaxy-${{ github.ref_name }}
       - name: 'Echo download path'
         run: echo ${{steps.download_id.outputs.download-path}}
-      - name: check download-artifact file log
+      - name: check download-artifact file log tag:3
         run: ls -R
       # --------------------  create zip file --------------------
       - uses: actions/checkout@v3
@@ -113,10 +113,8 @@ jobs:
           files: consolegalaxy_zipFolder/
           dest: consolegalaxy-${{ github.ref_name }}.zip
       # generates list of all files in root directory, download log from actions tab in github to view
-      - name: check thedoctor0 zip file log
-        run: |
-          cd
-          ls -R
+      - name: check thedoctor0 zip file log tag:4
+        run: ls -R
       # --------------------  Generate Changelog --------------------
       - name: Install and run github-changelog-generator
         run: |
