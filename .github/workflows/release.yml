@@ -73,15 +73,16 @@ jobs:
             !.gradle
             !.idea
             !.run
+            !.out
             !build
             !libs
             !readme_resources
       - name: List all upload-artifact folders only tag:1
         run: ls -R
-      - name: check upload-artifact file log tag:2
-        run: |
-          cd
-          ls -R
+      # - name: check upload-artifact file log tag:2
+      #   run: |
+      #     cd
+      #     ls -R
       # --------------------  copy server folder to working folder --------------------
       - uses: actions/checkout@v3
         with:
@@ -94,9 +95,7 @@ jobs:
       - name: 'Echo download path'
         run: echo ${{steps.download_id.outputs.download-path}}
       - name: check download-artifact file log
-        run: |
-          cd
-          ls -R
+        run: ls -R
       # --------------------  create zip file --------------------
       - uses: actions/checkout@v3
         with:
