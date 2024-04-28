@@ -2,7 +2,7 @@
 [![Github All Releases](https://img.shields.io/github/downloads/MilanTodorovic/Explore_the_galaxy/total.svg)]()
 
 
-<p align="center"><img src="./logo_pizonko_interlaced.png" /></p>
+<p align="center"><img src="./icon.png" /></p>
 <p align="center">A console script for Starsector</p><br><br>
 
 
