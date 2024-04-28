@@ -68,5 +68,5 @@ jobs:
         name: ConsoleGalaxy-${{ github.ref_name }}             # Release post Title Name
         artifacts: ConsoleGalaxy-${{ github.ref_name }}.zip         # Release File name
         token: ${{ secrets.GITHUB_TOKEN }}
-        generateReleaseNotes: true
+        #generateReleaseNotes: true
       
