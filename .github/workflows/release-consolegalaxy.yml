@@ -64,7 +64,7 @@ jobs:
       run: |
         echo "Changes for version ${{ github.ref_name }}" > CHANGELOGS.md
         echo "==============================" >> CHANGELOGS.md
-        git log -10 --pretty="format:Title: %s%n%nCommits:%n%b%nBy: %cn%nHash: %h%nDate: %aD%n----------------------------------%n" >> CHANGELOGS.md
+        git log -10 --pretty="format:Title: %s%n%nCommits:%n%b%nBy: %cn%nHash: %h%nDate: %aD (%cr)%n----------------------------------%n" >> CHANGELOGS.md
     - name: Show CHANGELOGS
       run: cat CHANGELOGS.md
     - name: list files tag:2
@@ -73,16 +73,9 @@ jobs:
   # echo the changelog to the output
     - name: Get changelog
       id: changelog
-      # run: echo "::set-output name=changelog::$(cat CHANGELOGS.md)"
-      run: |
-        changelog=$(cat CHANGELOGS.md)
-        if [[ -n "$changelog" ]]; then
-          echo "changelog=$changelog" >> $GITHUB_ENV
-        else
-          echo "changelog=No changes" >> $GITHUB_ENV
-        fi
+      run: echo "::set-output name=changelog::$(cat CHANGELOGS.md)"
 
-  # create a release with the CHANGELOGS.md file  #   ${{ steps.changelog.outputs.changelog }}
+  # create a release with the CHANGELOGS.md file
     - name: create release
       id: create_release
       uses: actions/create-release@v1
@@ -94,7 +87,7 @@ jobs:
         body: |
           Changes for version ${{ github.ref_name }}
           ===============================
-          ${{ env.changelog }}
+          ${{ steps.changelog.outputs.changelog }}
         draft: false
         prerelease: false
 
