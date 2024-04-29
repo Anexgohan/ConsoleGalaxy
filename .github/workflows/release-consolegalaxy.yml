@@ -29,8 +29,9 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-  # upload the release artifact to memory
+  # upload the release artifact to memory, this is whats seen on the actions summary page under Artifacts
     - name: Upload artifact
+      id: upload-artifact-id
       uses: actions/upload-artifact@v4
       with:
         name: ConsoleGalaxy-${{ github.ref_name }}
@@ -55,9 +56,23 @@ jobs:
           !out
 
     - name: list files tag:1
-      run: |
-        cd ..
-        ls -R
+      run: ls -R
+
+  # download the release artifact from memory as zip, 
+  # using dawidd6/action-download-artifact, not the built in download-artifact cause that unpacks the zip, this can keep it zipped
+    - name: Create folder
+      run: mkdir AA_ConsoleGalaxy_zipFolder
+    - name: Download artifact
+      id: download-artifact
+      uses: dawidd6/action-download-artifact@v3
+      with:
+        github_token: ${{secrets.GITHUB_TOKEN}}
+        name: ConsoleGalaxy-${{ github.ref_name }}
+        path: ./AA_ConsoleGalaxy_zipFolder
+        skip_unpack: false
+        if_no_artifact_found: fail
+    - name: list files tag:2
+      run: ls -R
 
   # make a CHANGELOGS.md file
     - name: Create CHANGELOGS file
@@ -67,7 +82,7 @@ jobs:
         git log -10 --pretty="format:Title: %s%n%nCommits:%n%b%nBy: %cn%nHash: %h%nDate: %aD (%cr)%n----------------------------------%n" >> CHANGELOGS.md
     - name: Show CHANGELOGS
       run: cat CHANGELOGS.md
-    - name: list files tag:2
+    - name: list files tag:3
       run: ls -R
 
   # echo the changelog to the output
@@ -98,6 +113,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ConsoleGalaxy-${{ github.ref_name }}.zip
+        asset_path: ./AA_ConsoleGalaxy_zipFolder/ConsoleGalaxy-${{ github.ref_name }}
         asset_name: ConsoleGalaxy-${{ github.ref_name }}.zip
         asset_content_type: application/zip
