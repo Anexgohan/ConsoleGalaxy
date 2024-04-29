@@ -111,6 +111,7 @@ jobs:
           Changes for version ${{ github.ref_name }}
           ===============================
           ${{ steps.changelog.outputs.changelog }}
+        body_path: CHANGELOGS.md
         draft: false
         prerelease: false
 
