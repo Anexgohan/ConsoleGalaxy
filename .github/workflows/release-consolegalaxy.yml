@@ -55,31 +55,36 @@ jobs:
           !readme_resources
           !out
 
+  # make a directory to download the artifact to
+    - name: make directory
+      run: mkdir AA_ConsoleGalaxy_zipFolder
+
+  # download the artifact to the directory
+    - name: Download artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: ConsoleGalaxy-${{ github.ref_name }}
+        path: ./AA_ConsoleGalaxy_zipFolder
+
     - name: list files tag:1
       run: ls -R
 
-  # download the release artifact from memory as zip, 
-  # using dawidd6/action-download-artifact, not the built in download-artifact cause that unpacks the zip, this can keep it zipped
-    - name: Create folder
-      run: mkdir AA_ConsoleGalaxy_zipFolder
-    - name: Download artifact
-      id: download-artifact
-      uses: dawidd6/action-download-artifact@v3
-      with:
-        github_token: ${{secrets.GITHUB_TOKEN}}
-        name: ConsoleGalaxy-${{ github.ref_name }}
-        path: ./AA_ConsoleGalaxy_zipFolder
-        skip_unpack: false
-        if_no_artifact_found: fail
+  # zip the artifact with name "ConsoleGalaxy-${{ github.ref_name }}.zip"
+    - name: zip artifact
+      run: zip -r ConsoleGalaxy-${{ github.ref_name }} ./AA_ConsoleGalaxy_zipFolder
+
     - name: list files tag:2
-      run: ls -R
+      run: |
+        ls -R
+        ls -R AA_ConsoleGalaxy_zipFolder
+        ls -R ${{ github.workspace }}
 
   # make a CHANGELOGS.md file
     - name: Create CHANGELOGS file
       run: |
-        echo "Changes for version ${{ github.ref_name }}" > CHANGELOGS.md
+        echo "Changes for version ${{ github.ref_name }}" >> CHANGELOGS.md
         echo "==============================" >> CHANGELOGS.md
-        git log -10 --pretty="format:Title: %s%n%nCommits:%n%b%nBy: %cn%nHash: %h%nDate: %aD (%cr)%n----------------------------------%n" >> CHANGELOGS.md
+        git log -10 --pretty="format:Title: %s%n%nCommits:%n%b%nBy: %cn%nHash: %h%nDate: %aD %n----------------------------------%n" >> CHANGELOGS.md
     - name: Show CHANGELOGS
       run: cat CHANGELOGS.md
     - name: list files tag:3
@@ -113,6 +118,9 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./AA_ConsoleGalaxy_zipFolder/ConsoleGalaxy-${{ github.ref_name }}
+        asset_path: ./AA_ConsoleGalaxy_zipFolder/ConsoleGalaxy-${{ github.ref_name }}.zip
         asset_name: ConsoleGalaxy-${{ github.ref_name }}.zip
         asset_content_type: application/zip
+    
+    - name: list files tag:4
+      run: ls -R
