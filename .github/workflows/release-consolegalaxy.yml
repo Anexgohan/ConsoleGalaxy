@@ -53,6 +53,9 @@ jobs:
   prepare-zip:
     runs-on: ubuntu-latest
     needs: build
+    outputs:
+      output1: ${{ steps.make-zip-id.outputs.zip-file }}
+      output2: ${{ steps.CHANGELOGS-file-id.outputs.CHANGELOGS.md }}
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -87,9 +90,9 @@ jobs:
       run: cat CHANGELOGS.md
     - name: list files tag:4
       run: ls -R
-    outputs:
-      output1: ${{ steps.make-zip-id.outputs.zip-file }}
-      output2: ${{ steps.CHANGELOGS-file-id.outputs.CHANGELOGS.md }}
+    - name: Print output2
+      run: |
+        echo "Output2: ${{ steps.CHANGELOGS-file-id.outputs }}"
 
   release:
     runs-on: ubuntu-latest
