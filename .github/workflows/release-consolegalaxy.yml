@@ -70,7 +70,15 @@ jobs:
     - name: list files tag:2
       run: ls -R
 
-  # create a release 
+  # echo the changelog to the output
+    - name: Get changelog
+      id: changelog
+      # run: echo "::set-output name=changelog::$(cat CHANGELOGS.md)"
+      run: |
+        changelog=$(cat CHANGELOGS.md)
+        echo "changelog=$changelog" >> $GITHUB_ENV
+
+  # create a release with the CHANGELOGS.md file  #   ${{ steps.changelog.outputs.changelog }}
     - name: create release
       id: create_release
       uses: actions/create-release@v1
@@ -82,7 +90,7 @@ jobs:
         body: |
           Changes for version ${{ github.ref_name }}
           ===============================
-          $(cat CHANGELOGS.md)
+          ${{ env.changelog }}
         draft: false
         prerelease: false
 
