@@ -6,9 +6,9 @@
     "modVersion":
     {
         "major":1,
-        "minor":0,
-        "patch":19,
+        "minor":1,
+        "patch":1,
     },
     # Optional support for mod managers to allow users to update with one click, without visiting a mod page.
-    "directDownloadURL": "https://github.com/Anexgohan/ConsoleGalaxy/releases/download/v1.0.19/ConsoleGalaxy-v1.0.19.zip"
+    "directDownloadURL": "https://github.com/Anexgohan/ConsoleGalaxy/releases/download/v1.1.1/ConsoleGalaxy-v1.1.1.zip"
 }

@@ -73,7 +73,7 @@ jobs:
 
   # zip the artifact with name "ConsoleGalaxy-${{ github.ref_name }}.zip"
     - name: zip artifact
-      run: zip -r ./AA_zipped_Folder/ConsoleGalaxy-${{ github.ref_name }} AA_artifact_Download_Folder
+      run: zip -r ./AA_zipped_Folder/ConsoleGalaxy-${{ github.ref_name }}.zip AA_artifact_Download_Folder
 
     - name: list files tag:2
       run: |
