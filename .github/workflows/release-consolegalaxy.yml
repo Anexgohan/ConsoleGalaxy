@@ -50,7 +50,7 @@ jobs:
         ls -R
     
 # download extract artifact into ConsoleGalaxy_zipFolder
-  download:
+  prepare-zip:
     runs-on: ubuntu-latest
     needs: build
     steps:
@@ -74,3 +74,13 @@ jobs:
         zip -r ConsoleGalaxy-${{ github.ref_name }}.zip .
     - name: list files tag:3
       run: ls -R
+    # make a CHANGELOGS.md file
+    - name: Create CHANGELOGS file
+      run: |
+        echo "Changes for version ${{ github.ref_name }}" > CHANGELOGS.md
+        echo "==============================" >> CHANGELOGS.md
+        git log --format=%B -n 10 $(git log -1 --pretty=format:"%h") >> CHANGELOGS.md
+    # echo the CHANGELOGS file
+    - name: Show CHANGELOGS
+      run: cat CHANGELOGS.md
+  
