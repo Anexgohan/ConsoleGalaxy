@@ -79,7 +79,7 @@ jobs:
       run: |
         echo "Changes for version ${{ github.ref_name }}" > CHANGELOGS.md
         echo "==============================" >> CHANGELOGS.md
-        git log --format=%B -n 10 $(git log -1 --pretty=format:"%h") >> CHANGELOGS.md
+        git log -10 --pretty="format:Title: %s%n%nCommits:%n%b%nBy: %cn%nHash: %h%nDate: %aD (%cr)%n----------------------------------%n" >> CHANGELOGS.md
     # echo the CHANGELOGS file
     - name: Show CHANGELOGS
       run: cat CHANGELOGS.md
