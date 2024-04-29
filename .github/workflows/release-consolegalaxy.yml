@@ -57,26 +57,29 @@ jobs:
 
   # make a directory to download the artifact to
     - name: make directory
-      run: mkdir AA_ConsoleGalaxy_zipFolder
+      run: |
+        mkdir AA_zipped_Folder
+        mkdir AA_artifact_Download_Folder
 
   # download the artifact to the directory
     - name: Download artifact
       uses: actions/download-artifact@v4
       with:
         name: ConsoleGalaxy-${{ github.ref_name }}
-        path: ./AA_ConsoleGalaxy_zipFolder
+        path: AA_artifact_Download_Folder
 
     - name: list files tag:1
       run: ls -R
 
   # zip the artifact with name "ConsoleGalaxy-${{ github.ref_name }}.zip"
     - name: zip artifact
-      run: zip -r ConsoleGalaxy-${{ github.ref_name }} ./AA_ConsoleGalaxy_zipFolder
+      run: zip -r ./AA_zipped_Folder/ConsoleGalaxy-${{ github.ref_name }} AA_artifact_Download_Folder
 
     - name: list files tag:2
       run: |
         ls -R
-        ls -R AA_ConsoleGalaxy_zipFolder
+        ls -R AA_zipped_Folder
+        ls -R AA_artifact_Download_Folder
         ls -R ${{ github.workspace }}
 
   # make a CHANGELOGS.md file
@@ -118,7 +121,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./AA_ConsoleGalaxy_zipFolder/ConsoleGalaxy-${{ github.ref_name }}.zip
+        asset_path: AA_zipped_Folder/ConsoleGalaxy-${{ github.ref_name }}.zip
         asset_name: ConsoleGalaxy-${{ github.ref_name }}.zip
         asset_content_type: application/zip
     
