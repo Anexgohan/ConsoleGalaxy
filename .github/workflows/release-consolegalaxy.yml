@@ -8,6 +8,7 @@ on:
       - '*'
 
 jobs:
+# check if the push is a release tag
   check-tags:
     runs-on: ubuntu-latest
 
@@ -18,13 +19,20 @@ jobs:
           echo "This is not a release tag. Exiting..."
           exit 1
         fi
-  build:
+
+# start the release jobs
+  release:
     runs-on: ubuntu-latest
     needs: check-tags
+    permissions:
+      contents: write
+      packages: write
+      actions: write
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
 
+  # upload the release artifact to memory
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
@@ -54,7 +62,7 @@ jobs:
         cd ..
         ls -R
 
-# make a CHANGELOGS.md file
+  # make a CHANGELOGS.md file
     - name: Create CHANGELOGS file
       run: |
         echo "Changes for version ${{ github.ref_name }}" > CHANGELOGS.md
@@ -65,7 +73,7 @@ jobs:
     - name: list files tag:2
       run: ls -R
 
-# create a release 
+  # create a release 
     - name: create release
       id: create_release
       uses: actions/create-release@v1
@@ -81,7 +89,7 @@ jobs:
         draft: false
         prerelease: false
 
-# upload the release artifact
+  # upload the release artifact to the release page on github
     - name: upload release artifact
       uses: actions/upload-release-asset@v1
       env:
