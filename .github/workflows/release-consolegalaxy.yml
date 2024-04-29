@@ -23,11 +23,8 @@ jobs:
 # start the release jobs
   release:
     runs-on: ubuntu-latest
+    permissions: write-all
     needs: check-tags
-    permissions:
-      contents: write
-      packages: write
-      actions: write
     steps:
     - name: Checkout code
       uses: actions/checkout@v4

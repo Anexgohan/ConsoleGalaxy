@@ -3,7 +3,7 @@
     "name": "Console Galaxy",
     "author": "anex",
     "utility": "true",
-    "version": { "major": "1", "minor": "0", "patch": "16" },
+    "version": { "major": "1", "minor": "0", "patch": "17" },
     "description": "Search for systems with a certain number of planets and conditions, using Command Console",
     "gameVersion": "0.97a-RC11",
     "dependencies":  [
