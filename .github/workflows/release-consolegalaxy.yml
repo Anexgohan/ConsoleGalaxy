@@ -59,27 +59,27 @@ jobs:
     - name: make directory
       run: |
         mkdir AA_zipped_Folder
-        mkdir AA_artifact_Download_Folder
+        mkdir "Console Galaxy"
 
   # download the artifact to the directory
     - name: Download artifact
       uses: actions/download-artifact@v4
       with:
         name: ConsoleGalaxy-${{ github.ref_name }}
-        path: AA_artifact_Download_Folder
+        path: "Console Galaxy"
 
     - name: list files tag:1
       run: ls -R
 
   # zip the artifact with name "ConsoleGalaxy-${{ github.ref_name }}.zip"
     - name: zip artifact
-      run: zip -r ./AA_zipped_Folder/ConsoleGalaxy-${{ github.ref_name }}.zip AA_artifact_Download_Folder
+      run: zip -r ./AA_zipped_Folder/ConsoleGalaxy-${{ github.ref_name }}.zip "Console Galaxy"
 
     - name: list files tag:2
       run: |
         ls -R
         ls -R AA_zipped_Folder
-        ls -R AA_artifact_Download_Folder
+        ls -R "Console Galaxy"
         ls -R ${{ github.workspace }}
 
   # make a CHANGELOGS.md file
@@ -87,7 +87,7 @@ jobs:
       run: |
         echo "Changes for version ${{ github.ref_name }}" >> CHANGELOGS.md
         echo "==============================" >> CHANGELOGS.md
-        git log -10 --pretty="format:Title: %s%n%nCommits:%n%b%nBy: %cn%nHash: %h%nDate: %aD %n----------------------------------%n" >> CHANGELOGS.md
+        git log -10 --pretty="format:Title: %s%n%nCommits:%n%b%nBy: %cn%nHash: %h%nDate: %ci %n----------------------------------%n" >> CHANGELOGS.md
     - name: Show CHANGELOGS
       run: cat CHANGELOGS.md
     - name: list files tag:3
@@ -99,32 +99,20 @@ jobs:
       run: echo "::set-output name=changelog::$(cat CHANGELOGS.md)"
 
   # create a release with the CHANGELOGS.md file
-    - name: create release
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Release
+      uses: softprops/action-gh-release@v2
       with:
-        tag_name: ${{ github.ref_name }}
-        release_name: Release ${{ github.ref_name }}
-        body: |
-          Changes for version ${{ github.ref_name }}
-          ===============================
-          ${{ steps.changelog.outputs.changelog }}
+        name: ${{ github.ref_name }}
+        tag_name: ${{ github.ref }}
         body_path: CHANGELOGS.md
-        draft: false
-        prerelease: false
-
-  # upload the release artifact to the release page on github
-    - name: upload release artifact
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: AA_zipped_Folder/ConsoleGalaxy-${{ github.ref_name }}.zip
-        asset_name: ConsoleGalaxy-${{ github.ref_name }}.zip
-        asset_content_type: application/zip
+        generate_release_notes: true
+        append_body: true
+        repository: ${{ github.repository }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+        make_latest: true
+        files: |
+          AA_zipped_Folder/ConsoleGalaxy-${{ github.ref_name }}.zip
+          CHANGELOGS.md
     
     - name: list files tag:4
       run: ls -R
