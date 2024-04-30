@@ -73,7 +73,7 @@ jobs:
 
   # zip the artifact with name "ConsoleGalaxy-${{ github.ref_name }}.zip"
     - name: zip artifact
-      run: zip -r ./AA_zipped_Folder/ConsoleGalaxy-${{ github.ref_name }}.zip "Console Galaxy"
+      run: zip -r ./AA_zipped_Folder/ConsoleGalaxy.zip "Console Galaxy"
 
     - name: list files tag:2
       run: |
@@ -83,38 +83,19 @@ jobs:
         ls -R ${{ github.workspace }}
 
   # make a CHANGELOGS.md file
-    - name: "Build Changelog"
-      id: build_changelog
-      uses: mikepenz/release-changelog-builder-action@v4
+    - name: Update CHANGELOG
+      id: changelog
+      uses: requarks/changelog-action@v1
       with:
-        commitMode: true
-        outputFile: CHANGELOGS.md
-        configurationJson: |
-          {
-            "template": "#{{CHANGELOG}}",
-            "categories": [
-              {
-                  "title": "## Feature",
-                  "labels": ["feat", "feature", "enhancement", "new", "add", "added"]
-              },
-              {
-                  "title": "## Fix",
-                  "labels": ["fix", "fixes", "fixed", "fixing", "bug", "bugs", "error", "mistake", "problem", "resolve", "resolved", "correct", "corrected"]
-              },
-              {
-                  "title": "## Other",
-                  "labels": ["misc", "miscellaneous", "other"]
-              }
-            ],
-            "label_extractor": [
-              {
-                "pattern": "^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test){1}(\\([\\w\\-\\.]+\\))?(!)?: ([\\w ])+([\\s\\S]*)",
-                "target": "$1"
-              }
-            ],
-          }
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ github.token }}
+        tag: ${{ github.ref_name }}
+        writeToFile: true
+        changelogFilePath: CHANGELOGS.md
+        reverseOrder: true
+    
+    - name: echo changelog
+      run: echo "${{ steps.changelog.outputs.changes }}"
+
 
   # create a release with the CHANGELOGS.md file
     - name: Release
@@ -129,8 +110,16 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         make_latest: true
         files: |
-          AA_zipped_Folder/ConsoleGalaxy-${{ github.ref_name }}.zip
+          AA_zipped_Folder/ConsoleGalaxy.zip
           CHANGELOGS.md
     
     - name: list files tag:4
       run: ls -R
+
+  # # update the changelog file in the repository, please make a pull request locally after this
+  #   - name: Update resources
+  #     uses: test-room-7/action-update-file@v1
+  #     with:
+  #         file-path: CHANGELOGS.md
+  #         commit-msg: Update resources
+  #         github-token: ${{ secrets.GITHUB_TOKEN }}
