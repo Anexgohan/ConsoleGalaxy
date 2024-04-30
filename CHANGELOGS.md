@@ -1,3 +1,20 @@
+v1.1.4
+Changes for version 1.1.4
+===========================
+Title: Release Candidate
+
+Commits:
+deployed new action
+redundant code removed
+changes to release action
+switched to "softprops/action-gh-release"
+
+>By: Anexgohan
+>Hash: 1c1d30d
+>Date: 2024-04-30 04:02:32 +0530 
+
+----------------------------------------------
+
 v1.1.3
 Changes for version 1.1.3
 ===========================

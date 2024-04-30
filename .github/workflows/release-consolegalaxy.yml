@@ -83,21 +83,11 @@ jobs:
         ls -R ${{ github.workspace }}
 
   # make a CHANGELOGS.md file
-    - name: Create CHANGELOGS file
-      run: |
-        echo ${{ github.ref_name }} >> CHANGELOGS.md
-        echo "Changes for version ${{ github.ref_name }}" >> CHANGELOGS.md
-        echo "===========================" >> CHANGELOGS.md
-        git log -1 --pretty="format:Title: %s%n%nCommits:%n%b%n>By: %cn%n>Hash: %h%n>Date: %ci %n%n----------------------------------------------%n" >> CHANGELOGS.md
-    - name: Show CHANGELOGS
-      run: cat CHANGELOGS.md
-    - name: list files tag:3
-      run: ls -R
-
-  # echo the changelog to the output
-    - name: Get changelog
-      id: changelog
-      run: echo "::set-output name=changelog::$(cat CHANGELOGS.md)"
+    - name: "✏️ Generate release changelog"
+      uses: heinrichreimer/action-github-changelog-generator@v2.3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        output: CHANGELOGS.md
 
   # create a release with the CHANGELOGS.md file
     - name: Release
