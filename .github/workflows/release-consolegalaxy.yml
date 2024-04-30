@@ -93,6 +93,7 @@ jobs:
         toTag: v1.0.0a
         writeToFile: true
         changelogFilePath: CHANGELOGS.md
+        excludeTypes: ''
         includeInvalidCommits: true
         reverseOrder: true
     
