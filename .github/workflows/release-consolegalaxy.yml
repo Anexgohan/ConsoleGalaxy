@@ -93,6 +93,7 @@ jobs:
         toTag: v1.0.0a
         writeToFile: true
         changelogFilePath: CHANGELOGS.md
+        includeInvalidCommits: true
         reverseOrder: true
     
     - name: echo changelog
