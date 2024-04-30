@@ -89,6 +89,8 @@ jobs:
       with:
         token: ${{ github.token }}
         tag: ${{ github.ref_name }}
+        fromTag: ${{ github.ref_name }}
+        toTag: v1.0.0a
         writeToFile: true
         changelogFilePath: CHANGELOGS.md
         reverseOrder: true
