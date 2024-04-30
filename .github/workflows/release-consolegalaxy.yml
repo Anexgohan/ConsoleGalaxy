@@ -98,8 +98,8 @@ jobs:
         reverseOrder: true
     
     - name: echo changelog
-      run: |
-        echo ${{ steps.changelog.outputs.changes }}
+      run: cat CHANGELOGS.md
+      # run: echo ${{ steps.changelog.outputs.changes }}
 
 
   # create a release with the CHANGELOGS.md file
