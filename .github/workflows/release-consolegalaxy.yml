@@ -83,23 +83,26 @@ jobs:
         ls -R ${{ github.workspace }}
 
   # make a CHANGELOGS.md file
-    - name: Update CHANGELOG
-      id: changelog
-      uses: requarks/changelog-action@v1
-      with:
-        token: ${{ github.token }}
-        # tag: ${{ github.ref_name }}
-        fromTag: ${{ github.ref_name }}
-        toTag: v1.0.0a
-        writeToFile: true
-        changelogFilePath: CHANGELOGS.md
-        excludeTypes: 'utyjgh'
-        includeInvalidCommits: true
-        reverseOrder: true
-    
-    - name: echo changelog
+    - name: Create CHANGELOGS file
+      run: |
+        echo ${{ github.ref_name }} >> CHANGELOGS.md
+        echo "Changes for version ${{ github.ref_name }}" >> CHANGELOGS.md
+        echo "===========================" >> CHANGELOGS.md
+        git log -10 --pretty="format:Title: %s%n%nCommits:%n%b%n>By: %cn%n>Hash: %h%n>Date: %ci %n%n----------------------------------------------%n" >> CHANGELOGS.md
+        git log HEAD^..HEAD --pretty="format:Title: %s%n%nCommits:%n%b%n>By: %cn%n>Hash: %h%n>Date: %ci %n%n----------------------------------------------%n" >> AA_zipped_Folder/CHANGELOGS.md
+      
+      # CHANGELOGS.md <--- this changelog is the main changelog file that will be updated on the repository
+      # AA_zipped_Folder/CHANGELOGS.md <--- this changelog is the changelog file that will be released on the release page,
+      # it only contains the changes of the current release
+    - name: Show CHANGELOGS
       run: cat CHANGELOGS.md
-      # run: echo ${{ steps.changelog.outputs.changes }}
+    - name: list files tag:3
+      run: ls -R
+
+    # echo the changelog to the output
+    - name: Get changelog
+      id: changelog
+      run: echo "::set-output name=changelog::$(cat CHANGELOGS.md)"
 
 
   # create a release with the CHANGELOGS.md file
