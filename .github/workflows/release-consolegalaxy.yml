@@ -100,8 +100,6 @@ jobs:
     - name: echo changelog
       run: |
         echo ${{ steps.changelog.outputs.changes }}
-        echo ---------------------------------------------
-        cat CHANGELOGS.md
 
 
   # create a release with the CHANGELOGS.md file
