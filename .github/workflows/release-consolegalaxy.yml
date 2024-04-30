@@ -88,7 +88,7 @@ jobs:
       uses: requarks/changelog-action@v1
       with:
         token: ${{ github.token }}
-        tag: ${{ github.ref_name }}
+        # tag: ${{ github.ref_name }}
         fromTag: ${{ github.ref_name }}
         toTag: v1.0.0a
         writeToFile: true
