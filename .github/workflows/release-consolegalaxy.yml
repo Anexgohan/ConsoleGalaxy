@@ -85,9 +85,10 @@ jobs:
   # make a CHANGELOGS.md file
     - name: Create CHANGELOGS file
       run: |
+        echo ${{ github.ref_name }} >> CHANGELOGS.md
         echo "Changes for version ${{ github.ref_name }}" >> CHANGELOGS.md
-        echo "==============================" >> CHANGELOGS.md
-        git log -10 --pretty="format:Title: %s%n%nCommits:%n%b%nBy: %cn%nHash: %h%nDate: %ci %n----------------------------------%n" >> CHANGELOGS.md
+        echo "===========================" >> CHANGELOGS.md
+        git log -1 --pretty="format:Title: %s%n%nCommits:%n%b%n>By: %cn%n>Hash: %h%n>Date: %ci %n%n----------------------------------------------%n" >> CHANGELOGS.md
     - name: Show CHANGELOGS
       run: cat CHANGELOGS.md
     - name: list files tag:3
