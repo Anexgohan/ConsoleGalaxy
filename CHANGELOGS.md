@@ -1,7 +1,59 @@
-v1.2.5
-Changes for version v1.2.5
+v1.2.7
+Changes for version v1.2.7
 ===========================
-HEAD, v1.2.5, origin/main
+HEAD, v1.2.7, origin/main
+Title: Public Release
+
+Commits:
+```
+fix: code refactor
+fix: removed old redundant entries
+fix: minimized the scope of the mod for better end experience
+fix: removed broken or half finished code entries
+bug: extensive bug fixing to remove crashes, should be stable now for main game
+docs: github actions overhaul to make the release cycle smoother and error checking.
+
+feat: fully supports Tri-OS mod Manager
+```
+>By: Anexgohan
+>Hash: 9b7eb08
+>Date: 2024-05-02 02:21:50 +0530 
+
+----------------------------------------------
+
+v1.2.6
+Title: Public Release
+
+Commits:
+```
+fix: code refactor
+fix: removed old redundant entries
+fix: minimized the scope of the mod for better end experience
+fix: removed broken or half finished code entries
+bug: extensive bug fixing to remove crashes, should be stable now for main game
+docs: github actions overhaul to make the release cycle smoother and error checking.
+
+feat: fully supports Tri-OS mod Manager
+```
+>By: Anexgohan
+>Hash: 36cb287
+>Date: 2024-05-02 02:16:50 +0530 
+
+----------------------------------------------
+
+
+Title: v1.2.5 - Auto Bot Updated CHANGELOGS.md
+
+Commits:
+```
+```
+>By: Anexgohan
+>Hash: c22e0ea
+>Date: 2024-05-01 20:11:28 +0000 
+
+----------------------------------------------
+
+v1.2.5
 Title: wip
 
 Commits:
