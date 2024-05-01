@@ -36,7 +36,7 @@ jobs:
         fetch-tags: true  # Whether to fetch tags, even if fetch-depth > 0. # Default: false
     
     # make a directory to download the artifact to
-    - name: make directory
+    - name: make directories
       run: |
         mkdir AA_zipped_Folder
         mkdir "Console Galaxy"
@@ -65,8 +65,6 @@ jobs:
       run: cat CHANGELOGS.md
     - name: Show CHANGELOGS for release, short
       run: cat AA_zipped_Folder/CHANGELOGS.md
-    - name: list files tag:3
-      run: ls -R
 
   # <---------------------------------------------- Upload artifact of full changelogs ---------------------------------------------->
     - name: Archive the repository changelogs
@@ -81,6 +79,18 @@ jobs:
       with:
         name: changelog-release
         path: AA_zipped_Folder/CHANGELOGS.md
+
+    - name: list files tag:1
+      run: |
+        ls -R
+        echo "1-----------------1"
+        find ./ | grep -iE "CHANGELOGS.md|AA_zipped_Folder|Console Galaxy|Console Galaxy.zip"
+        echo "2-----------------2"
+        ls -R AA_zipped_Folder
+        echo "3-----------------3"
+        ls -R "Console Galaxy"
+        echo "4-----------------4"
+        ls -R ${{ github.workspace }}
 
 # <================================================ Release Job ================================================>
 # start the release jobs
@@ -132,20 +142,17 @@ jobs:
         name: ConsoleGalaxy-${{ github.ref_name }}
         path: "Console Galaxy"
     
-    # - name: Download changelog-repository artifact
-    #   uses: actions/download-artifact@v4
-    #   with:
-    #     name: changelog-repository
-    #     path: "changelog-repository_folder"
+    - name: Download changelog-repository artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: changelog-repository
+        path: "changelog-repository_folder"
       
-    # - name: Download changelog-release artifact
-    #   uses: actions/download-artifact@v4
-    #   with:
-    #     name: changelog-release
-    #     path: "changelog-release_folder"
-
-    - name: list files tag:1
-      run: ls -R
+    - name: Download changelog-release artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: changelog-release
+        path: "changelog-release_folder"
 
   # <---------------------------------------------- Zip artifact ---------------------------------------------->
   # zip the artifact with name "ConsoleGalaxy.zip"
