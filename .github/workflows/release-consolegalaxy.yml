@@ -35,6 +35,12 @@ jobs:
         fetch-depth: 0    # Number of commits to fetch. 0 indicates all history for all branches and tags. # Default: 1
         fetch-tags: true  # Whether to fetch tags, even if fetch-depth > 0. # Default: false
     
+    # make a directory to download the artifact to
+    - name: make directory
+      run: |
+        mkdir AA_zipped_Folder
+        mkdir "Console Galaxy"
+        
   # make a CHANGELOGS.md file for the main repository
   # CHANGELOGS.md <--- this changelog is the main changelog file that will be updated on the repository, it contains last 1000 commits
     - name: Create CHANGELOGS file for repository
@@ -102,11 +108,6 @@ jobs:
           !out
 
   # <------------------------------------------------ Download artifact ------------------------------------------------>
-  # make a directory to download the artifact to
-    - name: make directory
-      run: |
-        mkdir AA_zipped_Folder
-        mkdir "Console Galaxy"
 
   # download the artifact to the directory
     - name: Download artifact
