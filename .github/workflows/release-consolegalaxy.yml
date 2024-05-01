@@ -157,9 +157,9 @@ jobs:
         find ./ | grep -iE "CHANGELOGS.md|folder_changelog_repository|folder_changelog_release|Console Galaxy|Console Galaxy.zip"
 
   # <---------------------------------------------- Zip artifact ---------------------------------------------->
-  # zip the artifact with name "ConsoleGalaxy.zip"
+  # zip the artifact with name "ConsoleGalaxy.zip", create a folder first called "folder_zipped" if not exist
     - name: zip artifact
-      run: zip -r ./folder_zipped/ConsoleGalaxy.zip "Console Galaxy"
+      run: mkdir -p folder_zipped && zip -r ./folder_zipped/ConsoleGalaxy.zip "Console Galaxy"
 
     - name: list files tag:3
       run: |
