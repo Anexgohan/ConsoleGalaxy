@@ -31,7 +31,8 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
       with:
-        clean: false      # without this checkout deletes empty folders after each use. # Default: true
+        path: checkout_safe_folder
+        # clean: false      # without this checkout deletes empty folders after each use. # Default: true
         fetch-depth: 0    # Number of commits to fetch. 0 indicates all history for all branches and tags. # Default: 1
         fetch-tags: true  # Whether to fetch tags, even if fetch-depth > 0. # Default: false
     
@@ -40,7 +41,10 @@ jobs:
       run: |
         mkdir AA_zipped_Folder
         mkdir "Console Galaxy"
+        echo "Directory created this is a test" > checkout_safe_folder/README.md
+        cat checkout_safe_folder/README.md
         
+  # <---------------------------------------------- create full changelogs ---------------------------------------------->
   # make a CHANGELOGS.md file for the main repository
   # CHANGELOGS.md <--- this changelog is the main changelog file that will be updated on the repository, it contains last 1000 commits
     - name: Create CHANGELOGS file for repository
@@ -50,6 +54,7 @@ jobs:
         echo "===========================" >> CHANGELOGS.md
         git log -1000 --pretty="format:%D%nTitle: %s%n%nCommits:%n\`\`\`%n%b\`\`\`%n>By: %cn%n>Hash: %h%n>Date: %ci %n%n----------------------------------------------%n" | sed 's/tag: //g' >> CHANGELOGS.md
 
+  # <---------------------------------------------- create short changelogs ---------------------------------------------->
   # make a CHANGELOGS.md file for the release and mod manager
   # AA_zipped_Folder/CHANGELOGS.md <--- this changelog is the changelog file that will be released on the release page, it only contains the changes of the current release, (HEAD^..HEAD) means between previous and current commit. 
     - name: Create CHANGELOGS file for release
@@ -66,11 +71,14 @@ jobs:
     - name: list files tag:3
       run: ls -R
 
+  # <---------------------------------------------- Upload artifact of full changelogs ---------------------------------------------->
     - name: Archive the repository changelogs
       uses: actions/upload-artifact@v4
       with:
         name: changelog-repository
         path: CHANGELOGS.md
+
+  # <---------------------------------------------- Upload artifact of short changelogs ---------------------------------------------->
     - name: Archive the release changelogs
       uses: actions/upload-artifact@v4
       with:
@@ -91,7 +99,7 @@ jobs:
         # fetch-depth: 0    # Number of commits to fetch. 0 indicates all history for all branches and tags. # Default: 1
         # fetch-tags: true  # Whether to fetch tags, even if fetch-depth > 0. # Default: false
 
-  # <------------------------------------------------ Upload artifact ------------------------------------------------>
+  # <---------------------------------------------- Upload artifact of mod to be zipped ---------------------------------------------->
   # upload the release artifact to memory, this is whats seen on the actions summary page under Artifacts
     - name: Upload artifact
       id: upload-artifact-id
@@ -118,7 +126,7 @@ jobs:
           !readme_resources
           !out
 
-  # <------------------------------------------------ Download artifact ------------------------------------------------>
+  # <---------------------------------------------- Download artifacts ---------------------------------------------->
 
   # download the artifact to the directory
     - name: Download artifact
@@ -126,11 +134,23 @@ jobs:
       with:
         name: ConsoleGalaxy-${{ github.ref_name }}
         path: "Console Galaxy"
+    
+    # - name: Download changelog-repository artifact
+    #   uses: actions/download-artifact@v4
+    #   with:
+    #     name: changelog-repository
+    #     path: "changelog-repository_folder"
+      
+    # - name: Download changelog-release artifact
+    #   uses: actions/download-artifact@v4
+    #   with:
+    #     name: changelog-release
+    #     path: "changelog-release_folder"
 
     - name: list files tag:1
       run: ls -R
 
-  # <------------------------------------------------ Zip artifact ------------------------------------------------>
+  # <---------------------------------------------- Zip artifact ---------------------------------------------->
   # zip the artifact with name "ConsoleGalaxy.zip"
     - name: zip artifact
       run: zip -r ./AA_zipped_Folder/ConsoleGalaxy.zip "Console Galaxy"
@@ -145,7 +165,7 @@ jobs:
         echo "3-----------------3"
         ls -R ${{ github.workspace }}
 
-  # <------------------------------------------------ Release ------------------------------------------------>
+  # <---------------------------------------------- Release ---------------------------------------------->
   # create a release with the CHANGELOGS.md file
     - name: Release
       uses: softprops/action-gh-release@v2
