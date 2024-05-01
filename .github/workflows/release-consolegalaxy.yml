@@ -225,7 +225,6 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         repository: ${{ github.repository }}
-        ref: ${{ github.head_ref }}
   
   # <---------------------------------------------- Download artifacts ---------------------------------------------->
     - name: Download changelog-full artifact
@@ -238,6 +237,8 @@ jobs:
         ls -R
         echo "1-----------------1"
         find ./ | grep -iE "CHANGELOGS.md|folder_changelog"
+        echo "2-----------------2"
+        echo ${{ github.head_ref }}
   
   # <---------------------------------------------- Update CHANGELOGS.md on the origin repository ---------------------------------------------->
     - name: Replace and push CHANGELOGS.md
@@ -248,4 +249,4 @@ jobs:
         message: "${{ github.ref_name }} - Auto Bot Updated CHANGELOGS.md"
         author_name: "github-actions[bot]"
         author_email: no-reply@dontmailme.org
-        push: true
+        push: origin HEAD:${{ github.head_ref }}
