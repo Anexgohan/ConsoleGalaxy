@@ -207,6 +207,6 @@ jobs:
         cp folder_changelog/full/CHANGELOGS.md CHANGELOGS.md
         git add CHANGELOGS.md
         git commit -m "${{ github.ref_name }} - Auto Bot Updated CHANGELOGS.md"
-        git push origin main
+        git push origin HEAD:refs/heads/main
 
   # git pull origin main
