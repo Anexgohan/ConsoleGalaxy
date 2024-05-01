@@ -76,21 +76,24 @@ jobs:
     - name: list files tag:1
       run: ls -R
 
-  # zip the artifact with name "ConsoleGalaxy-${{ github.ref_name }}.zip"
+  # zip the artifact with name "ConsoleGalaxy.zip"
     - name: zip artifact
       run: zip -r ./AA_zipped_Folder/ConsoleGalaxy.zip "Console Galaxy"
 
     - name: list files tag:2
       run: |
         ls -R
+        echo "1-----------------1"
         ls -R AA_zipped_Folder
+        echo "2-----------------2"
         ls -R "Console Galaxy"
+        echo "3-----------------3"
         ls -R ${{ github.workspace }}
 
   # get previous tag
     - name: Get previous tag
       id: previoustag-id
-      run: echo "::set-output name=tag-previous::$(git describe --tags --abbrev=0)"
+      run: echo "::set-output name=tag-previous::$(git describe --tags --abbrev=0 HEAD^)"
 
     - name: Show previous tag
       run: echo ${{ steps.previoustag-id.outputs.tag-previous }}
@@ -101,13 +104,13 @@ jobs:
 # we are creating two separate changelog files, one for the repository and one for the release page:
   
   # make main CHANGELOGS.md file for the repository
-  # CHANGELOGS.md <--- this changelog is the main changelog file that will be updated on the repository, it contains last 10 commits
+  # CHANGELOGS.md <--- this changelog is the main changelog file that will be updated on the repository, it contains last 50 commits
     - name: Create CHANGELOGS file for repository
       run: |
-        echo ${{ github.ref_name }} >> CHANGELOGS.md
+        echo ${{ github.ref_name }} > CHANGELOGS.md
         echo "Changes for version ${{ github.ref_name }}" >> CHANGELOGS.md
         echo "===========================" >> CHANGELOGS.md
-        git log -10 --pretty="format:Title: %s%n%nCommits:%n\`\`\`%n%b\`\`\`%n>By: %cn%n>Hash: %h%n>Date: %ci %n%n----------------------------------------------%n" >> CHANGELOGS.md
+        git log -50 --pretty="format:Title: %s%n%nCommits:%n\`\`\`%n%b\`\`\`%n>By: %cn%n>Hash: %h%n>Date: %ci %n%n----------------------------------------------%n" >> CHANGELOGS.md
     
   # make a CHANGELOGS.md file for the release and mod manager
   # AA_zipped_Folder/CHANGELOGS.md <--- this changelog is the changelog file that will be released on the release page, it only contains the changes of the current release, (HEAD^..HEAD) means between previous and current commit. 
@@ -116,7 +119,7 @@ jobs:
         echo ${{ github.ref_name }} >> AA_zipped_Folder/CHANGELOGS.md
         echo "Changes for version ${{ github.ref_name }}" >> AA_zipped_Folder/CHANGELOGS.md
         echo "===========================" >> AA_zipped_Folder/CHANGELOGS.md
-        git log ${{ steps.previoustag-id.outputs.tag-previous }}..${{ github.ref }} --pretty="format:Title: %s%n%nCommits:%n\`\`\`%n%b\`\`\`%n>By: %cn%n>Hash: %h%n>Date: %ci %n%n----------------------------------------------%n" >> AA_zipped_Folder/CHANGELOGS.md
+        git log HEAD^..${{ github.ref_name }} --pretty="format:Title: %s%n%nCommits:%n\`\`\`%n%b\`\`\`%n>By: %cn%n>Hash: %h%n>Date: %ci %n%n----------------------------------------------%n" >> AA_zipped_Folder/CHANGELOGS.md
 
     - name: Show CHANGELOGS main
       run: cat CHANGELOGS.md
