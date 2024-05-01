@@ -218,7 +218,7 @@ jobs:
   Update-Repository-Changelog:
     runs-on: ubuntu-latest
     permissions: write-all
-    needs: create-changelog
+    needs: release
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
