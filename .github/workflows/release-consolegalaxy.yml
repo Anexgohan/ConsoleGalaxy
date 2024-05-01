@@ -8,6 +8,7 @@ on:
       - '*'
 
 jobs:
+# <================================================ Check tags Job ================================================>
 # check if the push is a release tag
   check-tags:
     runs-on: ubuntu-latest
@@ -20,8 +21,9 @@ jobs:
           exit 1
         fi
 
-# start the release jobs
-  release:
+# <================================================ Create changelog Job ================================================>
+# we are creating two separate changelog files, one for the repository and one for the release page:
+  create-changelog:
     runs-on: ubuntu-latest
     permissions: write-all
     needs: check-tags
@@ -29,11 +31,50 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
       with:
-        clean: false      # without this checkout deletes empty folders after each use. # Default: true
+        # clean: false      # without this checkout deletes empty folders after each use. # Default: true
         fetch-depth: 0    # Number of commits to fetch. 0 indicates all history for all branches and tags. # Default: 1
         fetch-tags: true  # Whether to fetch tags, even if fetch-depth > 0. # Default: false
+    
+  # make a CHANGELOGS.md file for the main repository
+  # CHANGELOGS.md <--- this changelog is the main changelog file that will be updated on the repository, it contains last 1000 commits
+    - name: Create CHANGELOGS file for repository
+      run: |
+        echo ${{ github.ref_name }} > CHANGELOGS.md
+        echo "Changes for version ${{ github.ref_name }}" >> CHANGELOGS.md
+        echo "===========================" >> CHANGELOGS.md
+        git log -1000 --pretty="format:%D%nTitle: %s%n%nCommits:%n\`\`\`%n%b\`\`\`%n>By: %cn%n>Hash: %h%n>Date: %ci %n%n----------------------------------------------%n" | sed 's/tag: //g' >> CHANGELOGS.md
 
+  # make a CHANGELOGS.md file for the release and mod manager
+  # AA_zipped_Folder/CHANGELOGS.md <--- this changelog is the changelog file that will be released on the release page, it only contains the changes of the current release, (HEAD^..HEAD) means between previous and current commit. 
+    - name: Create CHANGELOGS file for release
+      run: |
+        echo ${{ github.ref_name }} > AA_zipped_Folder/CHANGELOGS.md
+        echo "Changes for version ${{ github.ref_name }}" >> AA_zipped_Folder/CHANGELOGS.md
+        echo "===========================" >> AA_zipped_Folder/CHANGELOGS.md
+        git log HEAD^..${{ github.ref_name }} --pretty="format:Title: %s%n%nCommits:%n\`\`\`%n%b\`\`\`%n>By: %cn%n>Hash: %h%n>Date: %ci %n%n----------------------------------------------%n" | sed 's/tag: //g' >> AA_zipped_Folder/CHANGELOGS.md
 
+    - name: Show CHANGELOGS main repository, full
+      run: cat CHANGELOGS.md
+    - name: Show CHANGELOGS for release, short
+      run: cat AA_zipped_Folder/CHANGELOGS.md
+    - name: list files tag:3
+      run: ls -R
+
+# <================================================ Release Job ================================================>
+# start the release jobs
+  release:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    needs: create-changelog
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        clean: false      # without this checkout deletes empty folders after each use. # Default: true
+        # fetch-depth: 0    # Number of commits to fetch. 0 indicates all history for all branches and tags. # Default: 1
+        # fetch-tags: true  # Whether to fetch tags, even if fetch-depth > 0. # Default: false
+
+  # <------------------------------------------------ Upload artifact ------------------------------------------------>
   # upload the release artifact to memory, this is whats seen on the actions summary page under Artifacts
     - name: Upload artifact
       id: upload-artifact-id
@@ -60,6 +101,7 @@ jobs:
           !readme_resources
           !out
 
+  # <------------------------------------------------ Download artifact ------------------------------------------------>
   # make a directory to download the artifact to
     - name: make directory
       run: |
@@ -76,6 +118,7 @@ jobs:
     - name: list files tag:1
       run: ls -R
 
+  # <------------------------------------------------ Zip artifact ------------------------------------------------>
   # zip the artifact with name "ConsoleGalaxy.zip"
     - name: zip artifact
       run: zip -r ./AA_zipped_Folder/ConsoleGalaxy.zip "Console Galaxy"
@@ -90,50 +133,7 @@ jobs:
         echo "3-----------------3"
         ls -R ${{ github.workspace }}
 
-  # get previous tag
-    - name: Get previous tag
-      id: previoustag-id
-      run: echo "::set-output name=tag-previous::$(git describe --tags --abbrev=0 HEAD^)"
-
-    - name: Show previous tag
-      run: echo ${{ steps.previoustag-id.outputs.tag-previous }}
-
-    - name: git log between previous and current tag
-      run: git log ${{ steps.previoustag-id.outputs.tag-previous }}..${{ github.ref }}
-
-# we are creating two separate changelog files, one for the repository and one for the release page:
-  
-  # make main CHANGELOGS.md file for the repository
-  # CHANGELOGS.md <--- this changelog is the main changelog file that will be updated on the repository, it contains last 50 commits
-    - name: Create CHANGELOGS file for repository
-      run: |
-        echo ${{ github.ref_name }} > CHANGELOGS.md
-        echo "Changes for version ${{ github.ref_name }}" >> CHANGELOGS.md
-        echo "===========================" >> CHANGELOGS.md
-        git log -50 --pretty="format:Title: %s%n%nCommits:%n\`\`\`%n%b\`\`\`%n>By: %cn%n>Hash: %h%n>Date: %ci %n%n----------------------------------------------%n" >> CHANGELOGS.md
-    
-  # make a CHANGELOGS.md file for the release and mod manager
-  # AA_zipped_Folder/CHANGELOGS.md <--- this changelog is the changelog file that will be released on the release page, it only contains the changes of the current release, (HEAD^..HEAD) means between previous and current commit. 
-    - name: Create CHANGELOGS file for release
-      run: |
-        echo ${{ github.ref_name }} >> AA_zipped_Folder/CHANGELOGS.md
-        echo "Changes for version ${{ github.ref_name }}" >> AA_zipped_Folder/CHANGELOGS.md
-        echo "===========================" >> AA_zipped_Folder/CHANGELOGS.md
-        git log HEAD^..${{ github.ref_name }} --pretty="format:Title: %s%n%nCommits:%n\`\`\`%n%b\`\`\`%n>By: %cn%n>Hash: %h%n>Date: %ci %n%n----------------------------------------------%n" >> AA_zipped_Folder/CHANGELOGS.md
-
-    - name: Show CHANGELOGS main
-      run: cat CHANGELOGS.md
-    - name: Show CHANGELOGS release
-      run: cat AA_zipped_Folder/CHANGELOGS.md
-    - name: list files tag:3
-      run: ls -R
-
-    # # echo the changelog to the output
-    # - name: Get changelog
-    #   id: changelog
-    #   run: echo "::set-output name=changelog::$(cat CHANGELOGS.md)"
-
-
+  # <------------------------------------------------ Release ------------------------------------------------>
   # create a release with the CHANGELOGS.md file
     - name: Release
       uses: softprops/action-gh-release@v2
