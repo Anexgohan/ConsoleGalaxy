@@ -209,5 +209,4 @@ jobs:
         git add CHANGELOGS.md
         git commit -m "${{ github.ref_name }} - Auto Bot Updated CHANGELOGS.md"
         git push origin HEAD:refs/heads/main
-
-  # git pull origin main
+        git pull origin main
