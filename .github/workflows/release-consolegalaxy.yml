@@ -82,18 +82,27 @@ jobs:
         ls -R "Console Galaxy"
         ls -R ${{ github.workspace }}
 
-  # make a CHANGELOGS.md file
+# we are creating two separate changelog files, one for the repository and one for the release page:
+  
+  # make main CHANGELOGS.md file for the repository
+  # CHANGELOGS.md <--- this changelog is the main changelog file that will be updated on the repository, it contains last 10 commits
     - name: Create CHANGELOGS file
       run: |
         echo ${{ github.ref_name }} >> CHANGELOGS.md
         echo "Changes for version ${{ github.ref_name }}" >> CHANGELOGS.md
         echo "===========================" >> CHANGELOGS.md
-        git log -10 --pretty="format:Title: %s%n%nCommits:%n%b%n>By: %cn%n>Hash: %h%n>Date: %ci %n%n----------------------------------------------%n" >> CHANGELOGS.md
+        git log -10 --pretty="format:Title: %s%n%nCommits:%n\`\`\`%n%b\`\`\`%n>By: %cn%n>Hash: %h%n>Date: %ci %n%n----------------------------------------------%n" >> CHANGELOGS.md
         git log HEAD^..HEAD --pretty="format:Title: %s%n%nCommits:%n%b%n>By: %cn%n>Hash: %h%n>Date: %ci %n%n----------------------------------------------%n" >> AA_zipped_Folder/CHANGELOGS.md
-      
-      # CHANGELOGS.md <--- this changelog is the main changelog file that will be updated on the repository
-      # AA_zipped_Folder/CHANGELOGS.md <--- this changelog is the changelog file that will be released on the release page,
-      # it only contains the changes of the current release
+    
+  # make a CHANGELOGS.md file for the release and mod manager
+  # AA_zipped_Folder/CHANGELOGS.md <--- this changelog is the changelog file that will be released on the release page, it only contains the changes of the current release, (HEAD^..HEAD) means between previous and current commit. 
+    - name: Create CHANGELOGS file
+      run: |
+        echo ${{ github.ref_name }} >> CHANGELOGS.md
+        echo "Changes for version ${{ github.ref_name }}" >> CHANGELOGS.md
+        echo "===========================" >> CHANGELOGS.md
+        git log HEAD^..HEAD --pretty="format:Title: %s%n%nCommits:%n\`\`\`%n%b\`\`\`%n>By: %cn%n>Hash: %h%n>Date: %ci %n%n----------------------------------------------%n" >> AA_zipped_Folder/CHANGELOGS.md
+
     - name: Show CHANGELOGS
       run: cat CHANGELOGS.md
     - name: list files tag:3
@@ -119,7 +128,7 @@ jobs:
         make_latest: true
         files: |
           AA_zipped_Folder/ConsoleGalaxy.zip
-          CHANGELOGS.md
+          AA_zipped_Folder/CHANGELOGS.md
     
     - name: list files tag:4
       run: ls -R
