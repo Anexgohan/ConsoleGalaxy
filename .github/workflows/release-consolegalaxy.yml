@@ -223,7 +223,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
       with:
-        token: ${{ secrets.consolegalaxy-PAT }}
+        token: ${{ secrets.PAT }}
         repository: ${{ github.repository }}
   
   # <---------------------------------------------- Download artifacts ---------------------------------------------->
@@ -239,6 +239,12 @@ jobs:
         find ./ | grep -iE "CHANGELOGS.md|folder_changelog"
         echo "2-----------------2"
         echo ${{ github.head_ref }}
+        echo ${{ github.ref_name }}
+        echo ${{ github.ref }}
+        echo ${{ github.repository }}
+        echo ${{ github.workspace }}
+        echo ${{ github.repository_owner }}
+        echo ${{ github.base_ref }}
   
   # <---------------------------------------------- Update CHANGELOGS.md on the origin repository ---------------------------------------------->
     - name: Replace and push CHANGELOGS.md
