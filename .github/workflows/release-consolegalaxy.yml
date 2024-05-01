@@ -196,3 +196,15 @@ jobs:
   #         file-path: CHANGELOGS.md
   #         commit-msg: Update resources
   #         github-token: ${{ secrets.GITHUB_TOKEN }}
+
+  # <---------------------------------------------- Update CHANGELOGS.md on the origin repository ---------------------------------------------->
+    - name: Replace and push CHANGELOGS.md
+      run: |
+        git config --global user.name 'github-actions'
+        git config --global user.email 'github-actions@github.com'
+        cp folder_changelog/full/CHANGELOGS.md CHANGELOGS.md
+        git add CHANGELOGS.md
+        git commit -m "Auto Bot Updated CHANGELOGS.md"
+        git push origin ${{ github.ref }}
+
+  # git pull origin main
