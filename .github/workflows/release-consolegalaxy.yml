@@ -155,10 +155,6 @@ jobs:
         ls -R
         echo "1-----------------1"
         find ./ | grep -iE "CHANGELOGS.md|folder_changelog_repository|folder_changelog_release|Console Galaxy|Console Galaxy.zip"
-        echo "2-----------------2"
-        ls -R folder_changelog_repository folder_changelog_release "Console Galaxy"
-        echo "3-----------------3"
-        ls -R ${{ github.workspace }}
 
   # <---------------------------------------------- Zip artifact ---------------------------------------------->
   # zip the artifact with name "ConsoleGalaxy.zip"
@@ -171,10 +167,6 @@ jobs:
         echo "1-----------------1"
         find ./ | grep -iE "CHANGELOGS.md|folder_zipped|Console Galaxy|Console Galaxy.zip"
         echo "2-----------------2"
-        ls -R folder_zipped
-        echo "3-----------------3"
-        ls -R "Console Galaxy"
-        echo "4-----------------4"
         ls -R ${{ github.workspace }}
 
   # <---------------------------------------------- Release ---------------------------------------------->
