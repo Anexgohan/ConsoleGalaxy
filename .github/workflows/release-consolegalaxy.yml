@@ -37,46 +37,46 @@ jobs:
     
     # make a directory to download the artifact to
     - name: make directories
-      run: mkdir folder_changelog
+      run: mkdir -p folder_changelog/full folder_changelog/short
         
   # <---------------------------------------------- create full changelogs ---------------------------------------------->
   # make a CHANGELOGS.md file for the main repository
-  # CHANGELOGS.md <--- this changelog is the main changelog file that will be updated on the repository, it contains last 1000 commits
+  # folder_changelog/full/CHANGELOGS.md <--- this changelog is the main changelog file that will be updated on the repository, it contains last 1000 commits
     - name: Create CHANGELOGS file for repository
       run: |
-        echo ${{ github.ref_name }} > CHANGELOGS.md
-        echo "Changes for version ${{ github.ref_name }}" >> CHANGELOGS.md
-        echo "===========================" >> CHANGELOGS.md
-        git log -1000 --pretty="format:%D%nTitle: %s%n%nCommits:%n\`\`\`%n%b\`\`\`%n>By: %cn%n>Hash: %h%n>Date: %ci %n%n----------------------------------------------%n" | sed 's/tag: //g' >> CHANGELOGS.md
+        echo ${{ github.ref_name }} > folder_changelog/full/CHANGELOGS.md
+        echo "Changes for version ${{ github.ref_name }}" >> folder_changelog/full/CHANGELOGS.md
+        echo "===========================" >> folder_changelog/full/CHANGELOGS.md
+        git log -1000 --pretty="format:%D%nTitle: %s%n%nCommits:%n\`\`\`%n%b\`\`\`%n>By: %cn%n>Hash: %h%n>Date: %ci %n%n----------------------------------------------%n" | sed 's/tag: //g' >> folder_changelog/full/CHANGELOGS.md
 
   # <---------------------------------------------- create short changelogs ---------------------------------------------->
   # make a CHANGELOGS.md file for the release and mod manager
-  # folder_changelog/CHANGELOGS.md <--- this changelog is the changelog file that will be released on the release page, it only contains the changes of the current release, (HEAD^..HEAD) means between previous and current commit. 
+  # folder_changelog/short/CHANGELOGS.md <--- this changelog is the changelog file that will be released on the release page, it only contains the changes of the current release, (HEAD^..HEAD) means between previous and current commit. 
     - name: Create CHANGELOGS file for release
       run: |
-        echo ${{ github.ref_name }} > folder_changelog/CHANGELOGS.md
-        echo "Changes for version ${{ github.ref_name }}" >> folder_changelog/CHANGELOGS.md
-        echo "===========================" >> folder_changelog/CHANGELOGS.md
-        git log HEAD^..${{ github.ref_name }} --pretty="format:Title: %s%n%nCommits:%n\`\`\`%n%b\`\`\`%n>By: %cn%n>Hash: %h%n>Date: %ci %n%n----------------------------------------------%n" | sed 's/tag: //g' >> AA_zipped_Folder/CHANGELOGS.md
+        echo ${{ github.ref_name }} > folder_changelog/short/CHANGELOGS.md
+        echo "Changes for version ${{ github.ref_name }}" >> folder_changelog/short/CHANGELOGS.md
+        echo "===========================" >> folder_changelog/short/CHANGELOGS.md
+        git log HEAD^..${{ github.ref_name }} --pretty="format:Title: %s%n%nCommits:%n\`\`\`%n%b\`\`\`%n>By: %cn%n>Hash: %h%n>Date: %ci %n%n----------------------------------------------%n" | sed 's/tag: //g' >> folder_changelog/short/CHANGELOGS.md
 
     - name: Show CHANGELOGS main repository, full
-      run: cat CHANGELOGS.md
+      run: cat folder_changelog/full/CHANGELOGS.md
     - name: Show CHANGELOGS for release, short
-      run: cat folder_changelog/CHANGELOGS.md
+      run: cat folder_changelog/short/CHANGELOGS.md
 
   # <---------------------------------------------- Upload artifact of full changelogs ---------------------------------------------->
     - name: Archive the repository changelogs
       uses: actions/upload-artifact@v4
       with:
-        name: changelog-repository
-        path: CHANGELOGS.md
+        name: changelog-full
+        path: folder_changelog/full/CHANGELOGS.md
 
   # <---------------------------------------------- Upload artifact of short changelogs ---------------------------------------------->
     - name: Archive the release changelogs
       uses: actions/upload-artifact@v4
       with:
-        name: changelog-release
-        path: folder_changelog/CHANGELOGS.md
+        name: changelog-short
+        path: folder_changelog/short/CHANGELOGS.md
 
     - name: list files tag:1
       run: |
@@ -138,17 +138,17 @@ jobs:
         name: ConsoleGalaxy-${{ github.ref_name }}
         path: "Console Galaxy"
     
-    - name: Download changelog-repository artifact
+    - name: Download changelog-full artifact
       uses: actions/download-artifact@v4
       with:
-        name: changelog-repository
-        path: "folder_changelog_repository"
+        name: changelog-full
+        path: "folder_changelog/full"
       
-    - name: Download changelog-release artifact
+    - name: Download changelog-short artifact
       uses: actions/download-artifact@v4
       with:
-        name: changelog-release
-        path: "folder_changelog_release"
+        name: changelog-short
+        path: "folder_changelog/short"
 
     - name: list files tag:2
       run: |
@@ -163,15 +163,15 @@ jobs:
   # <---------------------------------------------- Zip artifact ---------------------------------------------->
   # zip the artifact with name "ConsoleGalaxy.zip"
     - name: zip artifact
-      run: zip -r ./AA_zipped_Folder/ConsoleGalaxy.zip "Console Galaxy"
+      run: zip -r ./folder_zipped/ConsoleGalaxy.zip "Console Galaxy"
 
     - name: list files tag:3
       run: |
         ls -R
         echo "1-----------------1"
-        find ./ | grep -iE "CHANGELOGS.md|AA_zipped_Folder|Console Galaxy|Console Galaxy.zip"
+        find ./ | grep -iE "CHANGELOGS.md|folder_zipped|Console Galaxy|Console Galaxy.zip"
         echo "2-----------------2"
-        ls -R AA_zipped_Folder
+        ls -R folder_zipped
         echo "3-----------------3"
         ls -R "Console Galaxy"
         echo "4-----------------4"
@@ -184,15 +184,15 @@ jobs:
       with:
         name: ${{ github.ref_name }}
         tag_name: ${{ github.ref }}
-        body_path: AA_zipped_Folder/CHANGELOGS.md
+        body_path: folder_changelog/short/CHANGELOGS.md
         generate_release_notes: true
         append_body: true
         repository: ${{ github.repository }}
         token: ${{ secrets.GITHUB_TOKEN }}
         make_latest: true
         files: |
-          AA_zipped_Folder/ConsoleGalaxy.zip
-          AA_zipped_Folder/CHANGELOGS.md
+          folder_zipped/ConsoleGalaxy.zip
+          folder_changelog/short/CHANGELOGS.md
     
     - name: list files tag:4
       run: ls -R
