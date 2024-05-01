@@ -120,10 +120,10 @@ jobs:
     - name: list files tag:3
       run: ls -R
 
-    # echo the changelog to the output
-    - name: Get changelog
-      id: changelog
-      run: echo "::set-output name=changelog::$(cat CHANGELOGS.md)"
+    # # echo the changelog to the output
+    # - name: Get changelog
+    #   id: changelog
+    #   run: echo "::set-output name=changelog::$(cat CHANGELOGS.md)"
 
 
   # create a release with the CHANGELOGS.md file
