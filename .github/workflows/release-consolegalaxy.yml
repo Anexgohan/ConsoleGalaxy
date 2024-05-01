@@ -28,6 +28,11 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+      with:
+        clean: false      # without this checkout deletes empty folders after each use. # Default: true
+        fetch-depth: 0    # Number of commits to fetch. 0 indicates all history for all branches and tags. # Default: 1
+        fetch-tags: true  # Whether to fetch tags, even if fetch-depth > 0. # Default: false
+
 
   # upload the release artifact to memory, this is whats seen on the actions summary page under Artifacts
     - name: Upload artifact
