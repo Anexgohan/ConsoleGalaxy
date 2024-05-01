@@ -200,15 +200,50 @@ jobs:
   #         github-token: ${{ secrets.GITHUB_TOKEN }}
 
   # <---------------------------------------------- Update CHANGELOGS.md on the origin repository ---------------------------------------------->
-    - name: Replace and push CHANGELOGS.md
-      run: |
-        echo ${{ github.ref }}
-        git config --global user.name 'Anexgohan'
-        git config --global user.email 'monish05m@gmail.com'
-        cp folder_changelog/full/CHANGELOGS.md CHANGELOGS.md
-        git add CHANGELOGS.md
-        git commit -m "${{ github.ref_name }} - Auto Bot Updated CHANGELOGS.md"
-        git push
+    # - name: Replace and push CHANGELOGS.md
+    #   run: |
+    #     echo ${{ github.ref }}
+    #     git config --global user.name 'Anexgohan'
+    #     git config --global user.email 'monish05m@gmail.com'
+    #     cp folder_changelog/full/CHANGELOGS.md CHANGELOGS.md
+    #     git add CHANGELOGS.md
+    #     git commit -m "${{ github.ref_name }} - Auto Bot Updated CHANGELOGS.md"
+    #     git push
 
     # git push origin HEAD:refs/heads/main
     # git pull origin main
+
+# <================================================ Release Job ================================================>
+# start the release jobs
+  Update-Repository-Changelog:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    needs: create-changelog
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        repository: ${{ github.repository }}
+        ref: ${{ github.head_ref }}
+  
+  # <---------------------------------------------- Download artifacts ---------------------------------------------->
+    - name: Download changelog-full artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: changelog-full
+        path: "folder_changelog/full"
+    - name: list files tag:5
+      run: |
+        ls -R
+        echo "1-----------------1"
+        find ./ | grep -iE "CHANGELOGS.md|folder_changelog"
+  
+  # <---------------------------------------------- Update CHANGELOGS.md on the origin repository ---------------------------------------------->
+    - name: Replace and push CHANGELOGS.md
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: "${{ github.ref_name }} - Auto Bot Updated CHANGELOGS.md"
+        file_pattern: 'CHANGELOGS.md'
+        commit_user_name: "github-actions[bot]"
+        commit_user_email: no-reply@dontmailme.org
