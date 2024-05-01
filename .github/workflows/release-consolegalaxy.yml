@@ -85,7 +85,7 @@ jobs:
   # get previous tag
     - name: Get previous tag
       id: previoustag-id
-      run: echo "::set-output name=tag-previous::$(git describe --tags --abbrev=0 HEAD~1)"
+      run: echo "::set-output name=tag-previous::$(git describe --tags --abbrev=0)"
 
     - name: Show previous tag
       run: echo ${{ steps.previoustag-id.outputs.tag-previous }}
@@ -97,7 +97,7 @@ jobs:
   
   # make main CHANGELOGS.md file for the repository
   # CHANGELOGS.md <--- this changelog is the main changelog file that will be updated on the repository, it contains last 10 commits
-    - name: Create CHANGELOGS file
+    - name: Create CHANGELOGS file for repository
       run: |
         echo ${{ github.ref_name }} >> CHANGELOGS.md
         echo "Changes for version ${{ github.ref_name }}" >> CHANGELOGS.md
@@ -106,7 +106,7 @@ jobs:
     
   # make a CHANGELOGS.md file for the release and mod manager
   # AA_zipped_Folder/CHANGELOGS.md <--- this changelog is the changelog file that will be released on the release page, it only contains the changes of the current release, (HEAD^..HEAD) means between previous and current commit. 
-    - name: Create CHANGELOGS file
+    - name: Create CHANGELOGS file for release
       run: |
         echo ${{ github.ref_name }} >> AA_zipped_Folder/CHANGELOGS.md
         echo "Changes for version ${{ github.ref_name }}" >> AA_zipped_Folder/CHANGELOGS.md
