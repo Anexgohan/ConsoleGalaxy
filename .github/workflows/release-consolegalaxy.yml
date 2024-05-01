@@ -154,12 +154,22 @@ jobs:
         name: changelog-release
         path: "changelog-release_folder"
 
+    - name: list files tag:2
+      run: |
+        ls -R
+        echo "1-----------------1"
+        ls -R AA_zipped_Folder
+        echo "2-----------------2"
+        ls -R "Console Galaxy"
+        echo "3-----------------3"
+        ls -R ${{ github.workspace }}
+
   # <---------------------------------------------- Zip artifact ---------------------------------------------->
   # zip the artifact with name "ConsoleGalaxy.zip"
     - name: zip artifact
       run: zip -r ./AA_zipped_Folder/ConsoleGalaxy.zip "Console Galaxy"
 
-    - name: list files tag:2
+    - name: list files tag:3
       run: |
         ls -R
         echo "1-----------------1"
