@@ -7,7 +7,10 @@ on:
     tags:
       - '*'
 
+  workflow_dispatch:  # allows manual trigger of the workflow
+
 jobs:
+
 # <================================================ Check tags Job ================================================>
 # check if the push is a release tag
   check-tags:
@@ -16,7 +19,7 @@ jobs:
     steps:
     - name: Check for release tag
       run: |
-        if [[ "${{ github.ref }}" != refs/tags/* ]]; then
+        if [[ "${{ github.ref }}" != refs/tags/v* ]]; then
           echo "This is not a release tag. Exiting..."
           exit 1
         fi
@@ -84,8 +87,6 @@ jobs:
         echo "1-----------------1"
         find ./ | grep -iE "CHANGELOGS.md|folder_changelog"
         echo "2-----------------2"
-        ls -R folder_changelog
-        echo "3-----------------3"
         ls -R ${{ github.workspace }}
 
 # <================================================ Release Job ================================================>
