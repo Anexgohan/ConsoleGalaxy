@@ -213,9 +213,9 @@ jobs:
     # git push origin HEAD:refs/heads/main
     # git pull origin main
 
-# <================================================ Release Job ================================================>
+# <================================================ Update-Repository ================================================>
 # start the release jobs
-  Update-Repository-Changelog:
+  Update-Repository:
     runs-on: ubuntu-latest
     permissions: write-all
     needs: release
@@ -241,9 +241,11 @@ jobs:
   
   # <---------------------------------------------- Update CHANGELOGS.md on the origin repository ---------------------------------------------->
     - name: Replace and push CHANGELOGS.md
-      uses: stefanzweifel/git-auto-commit-action@v5
+      uses: EndBug/add-and-commit@v9
       with:
-        commit_message: "${{ github.ref_name }} - Auto Bot Updated CHANGELOGS.md"
-        file_pattern: 'CHANGELOGS.md'
-        commit_user_name: "github-actions[bot]"
-        commit_user_email: no-reply@dontmailme.org
+        add: 'folder_changelog/full/CHANGELOGS.md'
+        cwd: '.'
+        message: "${{ github.ref_name }} - Auto Bot Updated CHANGELOGS.md"
+        author_name: "github-actions[bot]"
+        author_email: no-reply@dontmailme.org
+        push: true
