@@ -1,3 +1,253 @@
+v1.2.5
+Changes for version v1.2.5
+===========================
+HEAD, v1.2.5, origin/main
+Title: wip
+
+Commits:
+```
+bug: more testing
+```
+>By: Anexgohan
+>Hash: 704b80b
+>Date: 2024-05-02 01:40:22 +0530 
+
+----------------------------------------------
+
+v1.2.4
+Title: main push
+
+Commits:
+```
+fix: push to main
+fix: push to HEAD:refs/heads/main
+```
+>By: Anexgohan
+>Hash: 8b3ca10
+>Date: 2024-05-02 01:37:37 +0530 
+
+----------------------------------------------
+
+v1.2.3
+Title: enhanced bot functions
+
+Commits:
+```
+fix: push to origin not working
+bug: wrong tags
+```
+>By: Anexgohan
+>Hash: 10da04e
+>Date: 2024-05-01 20:58:32 +0530 
+
+----------------------------------------------
+
+v1.2.2
+Title: auto-bot
+
+Commits:
+```
+feat: auto commit
+feat: auto push to origin
+feat: always updated CHANGELOGS.md
+```
+>By: Anexgohan
+>Hash: b4a72e5
+>Date: 2024-05-01 20:42:03 +0530 
+
+----------------------------------------------
+
+v1.2.1
+Title: directory structure changed
+
+Commits:
+```
+fixes to auto asset generation
+new git action workflow
+```
+>By: Anexgohan
+>Hash: 28916db
+>Date: 2024-05-01 20:13:49 +0530 
+
+----------------------------------------------
+
+v1.1.31
+Title: list fix
+
+Commits:
+```
+fix: list not generating
+feat: backend stuff
+```
+>By: Anexgohan
+>Hash: b83c8e4
+>Date: 2024-05-01 19:59:37 +0530 
+
+----------------------------------------------
+
+v1.1.30
+Title: error fix
+
+Commits:
+```
+fix: based on some suggestion
+fix: backend fix
+```
+>By: Anexgohan
+>Hash: b9d10c6
+>Date: 2024-05-01 19:52:36 +0530 
+
+----------------------------------------------
+
+v1.1.29
+Title: based
+
+Commits:
+```
+this is taking too long
+```
+>By: Anexgohan
+>Hash: 7991230
+>Date: 2024-05-01 19:38:02 +0530 
+
+----------------------------------------------
+
+v1.1.28
+Title: wip
+
+Commits:
+```
+testing
+```
+>By: Anexgohan
+>Hash: e0bb961
+>Date: 2024-05-01 19:03:14 +0530 
+
+----------------------------------------------
+
+v1.1.27
+Title: test 07
+
+Commits:
+```
+feat: pretty log generation
+feat: switched to manual logging
+bug: (```) were causing issues
+fix: used \`\ to fix
+```
+>By: Anexgohan
+>Hash: 988597a
+>Date: 2024-05-01 19:00:57 +0530 
+
+----------------------------------------------
+
+
+Title: test 06
+
+Commits:
+```
+fix: requarks/changelog-action testing
+fix: wrong tagging
+bug: duplicated tags
+feat: from and to tagging
+```
+>By: Anexgohan
+>Hash: 50732cc
+>Date: 2024-05-01 19:00:13 +0530 
+
+----------------------------------------------
+
+v1.1.26
+Title: test 05
+
+Commits:
+```
+fix: implementation check
+fix: to auto asset generation
+feat: git action workflow
+```
+>By: Anexgohan
+>Hash: 8193a10
+>Date: 2024-05-01 12:41:53 +0530 
+
+----------------------------------------------
+
+v1.1.25
+Title: checkout fix
+
+Commits:
+```
+removed checkout
+```
+>By: Anexgohan
+>Hash: 39b96b0
+>Date: 2024-05-01 12:35:00 +0530 
+
+----------------------------------------------
+
+v1.1.24
+Title: test 04
+
+Commits:
+```
+```
+>By: Anexgohan
+>Hash: d716b41
+>Date: 2024-05-01 12:17:10 +0530 
+
+----------------------------------------------
+
+v1.1.23
+Title: test 03
+
+Commits:
+```
+fix: archival testing
+fix: release failing
+```
+>By: Anexgohan
+>Hash: 4e2181f
+>Date: 2024-05-01 11:44:54 +0530 
+
+----------------------------------------------
+
+v1.1.22
+Title: bug fixes
+
+Commits:
+```
+bug: not working as intended
+fix: should work as intended
+Feat: exclude types set to include all
+docs(version): updated version numbers
+```
+>By: Anexgohan
+>Hash: 1730e73
+>Date: 2024-05-01 10:44:10 +0530 
+
+----------------------------------------------
+
+v1.1.21
+Title: error check
+
+Commits:
+```
+fix: enhanced workflow
+fix: minimized code
+feat: changelog generation
+
+feat: forked from Explore the Galaxy
+bug: incompatible with Explore the Galaxy
+fix: removed useless stuff
+fix: removed old todo entries
+```
+>By: Anexgohan
+>Hash: 8093b7e
+>Date: 2024-05-01 10:40:57 +0530 
+
+----------------------------------------------
+
+v1.1.20
 Title: bug fixes
 
 Commits:
@@ -15,6 +265,7 @@ feat: from and to tagging
 
 ----------------------------------------------
 
+v1.1.19
 Title: test 02
 
 Commits:
@@ -30,6 +281,7 @@ docs(version): updated version numbers
 
 ----------------------------------------------
 
+v1.1.18
 Title: fix: changes to release action feat: switched to new methods
 
 Commits:
@@ -41,6 +293,7 @@ Commits:
 
 ----------------------------------------------
 
+v1.1.17
 Title: test 01
 
 Commits:
@@ -54,6 +307,7 @@ feat: bumped auto generation
 >Date: 2024-05-01 05:59:41 +0530 
 
 ----------------------------------------------
+
 
 Title: error checking
 
@@ -69,6 +323,7 @@ docs(version): updated version numbers
 >Date: 2024-05-01 05:53:15 +0530 
 
 ----------------------------------------------
+
 
 Title: release
 
@@ -89,6 +344,7 @@ fix: removed old todo entries
 
 ----------------------------------------------
 
+
 Title: bug fix
 
 Commits:
@@ -104,6 +360,7 @@ docs(version): updated version numbers
 
 ----------------------------------------------
 
+v1.1.16
 Title: pretty formatting
 
 Commits:
@@ -119,6 +376,7 @@ fix: used \`\ to fix
 
 ----------------------------------------------
 
+
 Title: error checking
 
 Commits:
@@ -132,6 +390,7 @@ fix: checking for exception
 
 ----------------------------------------------
 
+v1.1.15
 Title: something
 
 Commits:
@@ -146,6 +405,7 @@ feat: git action workflow
 
 ----------------------------------------------
 
+v1.1.14
 Title: tested
 
 Commits:
@@ -160,6 +420,7 @@ bug: at-least wont crash like the original one (hopefully)
 
 ----------------------------------------------
 
+v1.1.13
 Title: whats this
 
 Commits:
@@ -179,6 +440,7 @@ fix: removed old todo entries
 
 ----------------------------------------------
 
+v1.1.12
 Title: v1.1.12
 
 Commits:
@@ -194,6 +456,7 @@ docs(version): updated version numbers
 
 ----------------------------------------------
 
+v1.1.11
 Title: v1.1.11
 
 Commits:
@@ -208,6 +471,7 @@ feat: bumped auto generation
 
 ----------------------------------------------
 
+v1.1.10
 Title: more fixes
 
 Commits:
@@ -223,6 +487,7 @@ refactor: implementation of the changelog
 
 ----------------------------------------------
 
+v1.1.9
 Title: quarks
 
 Commits:
@@ -238,6 +503,7 @@ feat: from and to tagging
 
 ----------------------------------------------
 
+v1.1.8
 Title: conventionalcommits
 
 Commits:
@@ -252,6 +518,7 @@ bug: test bug
 
 ----------------------------------------------
 
+v1.1.7
 Title: alternate implementation
 
 Commits:
@@ -271,6 +538,7 @@ fix removed old todo entries
 
 ----------------------------------------------
 
+v1.1.6
 Title: backend update
 
 Commits:
@@ -284,6 +552,7 @@ add mikepenz/release-changelog-builder-action changelog
 
 ----------------------------------------------
 
+v1.1.5
 Title: changelog implementation
 
 Commits:
@@ -296,6 +565,7 @@ backend repair
 
 ----------------------------------------------
 
+v1.1.4
 Title: Release Candidate
 
 Commits:
@@ -309,6 +579,7 @@ redundant code removed
 
 ----------------------------------------------
 
+v1.1.3
 Title: softprops/action-gh-release
 
 Commits:
@@ -322,6 +593,7 @@ switched to "softprops/action-gh-release"
 
 ----------------------------------------------
 
+v1.1.2
 Title: Full Release
 
 Commits:
@@ -336,6 +608,7 @@ at-least wont crash like the original one (hopefully)
 
 ----------------------------------------------
 
+v1.1.1
 Title: Release Candidate
 
 Commits:
@@ -351,6 +624,7 @@ fix: removed old todo entries
 
 ----------------------------------------------
 
+v1.0.19
 Title: workflow update
 
 Commits:
@@ -366,6 +640,7 @@ fix: removed old todo entries
 
 ----------------------------------------------
 
+v1.0.18
 Title: initial release
 
 Commits:
@@ -380,6 +655,7 @@ fix: removed old todo entries
 >Date: 2024-04-30 02:48:43 +0530 
 
 ----------------------------------------------
+
 
 Title: initial release
 
@@ -396,6 +672,7 @@ fix: removed old todo entries
 
 ----------------------------------------------
 
+v1.0.17
 Title: alternate implementation
 
 Commits:
@@ -409,6 +686,7 @@ changelog generation
 >Date: 2024-04-30 01:15:48 +0530 
 
 ----------------------------------------------
+
 
 Title: workflow update
 
@@ -425,6 +703,7 @@ fix: removed old todo entries
 
 ----------------------------------------------
 
+
 Title: initial release
 
 Commits:
@@ -439,6 +718,7 @@ fix: removed old todo entries
 >Date: 2024-04-30 01:06:34 +0530 
 
 ----------------------------------------------
+
 
 Title: changelog generation
 
@@ -455,6 +735,7 @@ fix: removed old todo entries
 
 ----------------------------------------------
 
+
 Title: new implementation check
 
 Commits:
@@ -468,6 +749,7 @@ new git action workflow
 
 ----------------------------------------------
 
+v1.0.16
 Title: alternate implementation
 
 Commits:
@@ -481,6 +763,7 @@ minimized code
 
 ----------------------------------------------
 
+v1.0.15
 Title: changes
 
 Commits:
@@ -492,6 +775,7 @@ Commits:
 
 ----------------------------------------------
 
+main
 Title: test
 
 Commits:
@@ -502,6 +786,7 @@ Commits:
 >Date: 2024-04-29 19:24:41 +0530 
 
 ----------------------------------------------
+
 
 Title: test
 
@@ -514,6 +799,7 @@ Commits:
 
 ----------------------------------------------
 
+v1.0.14
 Title: v1.0.14
 
 Commits:
@@ -526,6 +812,7 @@ alt approach
 
 ----------------------------------------------
 
+v1.0.13
 Title: changelog generation
 
 Commits:
@@ -537,6 +824,7 @@ Commits:
 
 ----------------------------------------------
 
+v1.0.12
 Title: v1.0.12
 
 Commits:
@@ -549,6 +837,7 @@ new git action workflow
 >Date: 2024-04-29 17:24:48 +0530 
 
 ----------------------------------------------
+
 
 Title: workflow update
 
@@ -565,6 +854,7 @@ fix: removed old todo entries
 
 ----------------------------------------------
 
+
 Title: fixed
 
 Commits:
@@ -575,6 +865,7 @@ Commits:
 >Date: 2024-04-29 06:14:32 +0530 
 
 ----------------------------------------------
+
 
 Title: workflow
 
@@ -587,6 +878,7 @@ Commits:
 
 ----------------------------------------------
 
+v1.0.11
 Title: v1.0.11
 
 Commits:
@@ -598,6 +890,7 @@ Commits:
 
 ----------------------------------------------
 
+v1.0.10
 Title: v1.0.10
 
 Commits:
@@ -608,6 +901,7 @@ Commits:
 >Date: 2024-04-29 04:57:54 +0530 
 
 ----------------------------------------------
+
 
 Title: v1.0.10
 
@@ -620,6 +914,7 @@ Commits:
 
 ----------------------------------------------
 
+v1.0.9
 Title: v1.0.9
 
 Commits:
@@ -630,6 +925,7 @@ Commits:
 >Date: 2024-04-29 03:55:49 +0530 
 
 ----------------------------------------------
+
 
 Title: v1.0.9
 
@@ -646,6 +942,7 @@ fix: removed old todo entries
 
 ----------------------------------------------
 
+
 Title: 1.0.9
 
 Commits:
@@ -657,6 +954,7 @@ Commits:
 
 ----------------------------------------------
 
+v1.0.8
 Title: Merge branch 'main' of github.com:Anexgohan/ConsoleGalaxy
 
 Commits:
@@ -667,6 +965,7 @@ Commits:
 >Date: 2024-04-29 02:41:05 +0530 
 
 ----------------------------------------------
+
 
 Title: v1.0.8
 
@@ -683,6 +982,7 @@ fix: removed old todo entries
 
 ----------------------------------------------
 
+
 Title: test
 
 Commits:
@@ -693,6 +993,7 @@ Commits:
 >Date: 2024-04-29 02:38:17 +0530 
 
 ----------------------------------------------
+
 
 Title: v1.0.8
 
@@ -709,6 +1010,7 @@ fix: removed old todo entries
 
 ----------------------------------------------
 
+v1.0.7
 Title: 1.0.7
 
 Commits:
@@ -724,6 +1026,7 @@ fix: removed old todo entries
 
 ----------------------------------------------
 
+v1.0.6
 Title: v1.0.6
 
 Commits:
@@ -738,6 +1041,7 @@ fix: removed old todo entries
 >Date: 2024-04-29 01:44:54 +0530 
 
 ----------------------------------------------
+
 
 Title: v1.0.6
 
@@ -754,6 +1058,7 @@ fix: removed old todo entries
 
 ----------------------------------------------
 
+
 Title: v1.0.6
 
 Commits:
@@ -769,6 +1074,7 @@ fix: removed old todo entries
 
 ----------------------------------------------
 
+
 Title: moved some files
 
 Commits:
@@ -779,6 +1085,7 @@ Commits:
 >Date: 2024-04-29 00:35:12 +0530 
 
 ----------------------------------------------
+
 
 Title: v1.0.6
 
@@ -791,6 +1098,7 @@ Commits:
 
 ----------------------------------------------
 
+
 Title: v1.0.6 new faster release flow
 
 Commits:
@@ -801,6 +1109,7 @@ Commits:
 >Date: 2024-04-29 00:29:20 +0530 
 
 ----------------------------------------------
+
 
 Title: v1.0.5
 
@@ -813,6 +1122,7 @@ Commits:
 
 ----------------------------------------------
 
+
 Title: v1.0.4
 
 Commits:
@@ -824,6 +1134,7 @@ Commits:
 
 ----------------------------------------------
 
+v1.0.3
 Title: v1.0.3 release
 
 Commits:
@@ -835,6 +1146,7 @@ Commits:
 
 ----------------------------------------------
 
+v1.0.2
 Title: v1.0.2
 
 Commits:
@@ -845,6 +1157,7 @@ Commits:
 >Date: 2024-04-28 20:20:17 +0530 
 
 ----------------------------------------------
+
 
 Title: v1.0.2
 
@@ -857,6 +1170,7 @@ Commits:
 
 ----------------------------------------------
 
+
 Title: v1.0.2
 
 Commits:
@@ -867,6 +1181,7 @@ Commits:
 >Date: 2024-04-28 20:03:32 +0530 
 
 ----------------------------------------------
+
 
 Title: v1.0.2
 
@@ -879,6 +1194,7 @@ Commits:
 
 ----------------------------------------------
 
+
 Title: release
 
 Commits:
@@ -889,6 +1205,7 @@ Commits:
 >Date: 2024-04-28 19:43:10 +0530 
 
 ----------------------------------------------
+
 
 Title: v1.0.2 release
 
@@ -901,6 +1218,7 @@ Commits:
 
 ----------------------------------------------
 
+v1.0.0a
 Title: Update README.md
 
 Commits:
@@ -911,6 +1229,7 @@ Commits:
 >Date: 2024-04-28 19:19:02 +0530 
 
 ----------------------------------------------
+
 
 Title: Update README.md
 
@@ -923,6 +1242,7 @@ Commits:
 
 ----------------------------------------------
 
+
 Title: Update README.md
 
 Commits:
@@ -933,6 +1253,7 @@ Commits:
 >Date: 2024-04-28 18:38:04 +0530 
 
 ----------------------------------------------
+
 
 Title: Forked from Explore the Galaxy, released as Console Galaxy v1.0.0a
 
@@ -945,6 +1266,7 @@ Commits:
 
 ----------------------------------------------
 
+
 Title: Testing VCS
 
 Commits:
@@ -955,6 +1277,7 @@ Commits:
 >Date: 2021-06-07 09:41:22 +0200 
 
 ----------------------------------------------
+
 
 Title: Update README.md
 
@@ -967,6 +1290,7 @@ Commits:
 
 ----------------------------------------------
 
+
 Title: Version 1.2.3
 
 Commits:
@@ -977,6 +1301,7 @@ Commits:
 >Date: 2021-06-06 10:40:36 +0200 
 
 ----------------------------------------------
+
 
 Title: Update README.md
 
@@ -989,6 +1314,7 @@ Commits:
 
 ----------------------------------------------
 
+
 Title: Update README.md
 
 Commits:
@@ -999,6 +1325,7 @@ Commits:
 >Date: 2021-06-06 10:35:56 +0200 
 
 ----------------------------------------------
+
 
 Title: Version 1.2.3
 
@@ -1011,6 +1338,7 @@ Wildcard now supported at the start of a planetary condition: *abundant.```
 
 ----------------------------------------------
 
+
 Title: Version 1.2.3
 
 Commits:
@@ -1021,6 +1349,7 @@ Wildcard now supported at the start of a planetary condition: *abundant.```
 >Date: 2021-06-06 10:33:57 +0200 
 
 ----------------------------------------------
+
 
 Title: Version 1.2.3
 
@@ -1033,6 +1362,7 @@ Commits:
 
 ----------------------------------------------
 
+
 Title: Version 1.2.3
 
 Commits:
@@ -1043,6 +1373,7 @@ Commits:
 >Date: 2021-06-06 10:32:12 +0200 
 
 ----------------------------------------------
+
 
 Title: Version 1.2.2
 
@@ -1055,6 +1386,7 @@ Commits:
 
 ----------------------------------------------
 
+
 Title: Version 1.2.2
 
 Commits:
@@ -1065,6 +1397,7 @@ Wildcard update```
 >Date: 2021-06-04 23:29:54 +0200 
 
 ----------------------------------------------
+
 
 Title: Version 1.2.2
 
@@ -1077,6 +1410,7 @@ Wildcard update```
 
 ----------------------------------------------
 
+
 Title: Version 1.2.2
 
 Commits:
@@ -1087,6 +1421,7 @@ Wildcard update```
 >Date: 2021-06-04 23:28:23 +0200 
 
 ----------------------------------------------
+
 
 Title: Update ExplorationModPlugin.java
 
@@ -1099,6 +1434,7 @@ Disabled EveryFrameScript```
 
 ----------------------------------------------
 
+
 Title: Add files via upload
 
 Commits:
@@ -1109,6 +1445,7 @@ Commits:
 >Date: 2021-06-04 16:37:23 +0200 
 
 ----------------------------------------------
+
 
 Title: Update exploration.version
 
@@ -1121,6 +1458,7 @@ Commits:
 
 ----------------------------------------------
 
+
 Title: Update mod_info.json
 
 Commits:
@@ -1131,6 +1469,7 @@ Commits:
 >Date: 2021-06-04 14:58:53 +0200 
 
 ----------------------------------------------
+
 
 Title: Update README.md
 
@@ -1143,6 +1482,7 @@ Better Colonies update fixed the issue```
 
 ----------------------------------------------
 
+
 Title: Update README.md
 
 Commits:
@@ -1153,6 +1493,7 @@ Commits:
 >Date: 2021-06-04 14:31:04 +0200 
 
 ----------------------------------------------
+
 
 Title: Updated for Version 1.2
 
@@ -1165,6 +1506,7 @@ Commits:
 
 ----------------------------------------------
 
+
 Title: Pics of version 1.0
 
 Commits:
@@ -1175,6 +1517,7 @@ Commits:
 >Date: 2021-06-04 14:18:37 +0200 
 
 ----------------------------------------------
+
 
 Title: Delete systeminrange_example.png
 
@@ -1187,6 +1530,7 @@ Commits:
 
 ----------------------------------------------
 
+
 Title: Delete mod_pic.png
 
 Commits:
@@ -1198,6 +1542,7 @@ Commits:
 
 ----------------------------------------------
 
+
 Title: Deleting old files
 
 Commits:
@@ -1208,6 +1553,7 @@ Deleting old files```
 >Date: 2021-06-04 14:16:03 +0200 
 
 ----------------------------------------------
+
 
 Title: V1.2
 
@@ -1240,6 +1586,7 @@ Version 1.2:
 
 ----------------------------------------------
 
+
 Title: Update exploration.version
 
 Commits:
@@ -1250,6 +1597,7 @@ Commits:
 >Date: 2021-05-31 12:32:59 +0200 
 
 ----------------------------------------------
+
 
 Title: Update exploration.version
 
@@ -1262,6 +1610,7 @@ Commits:
 
 ----------------------------------------------
 
+
 Title: Update README.md
 
 Commits:
@@ -1272,6 +1621,7 @@ updated for new arguments exclude/include```
 >Date: 2021-05-29 10:34:31 +0200 
 
 ----------------------------------------------
+
 
 Title: Update README.md
 
@@ -1284,6 +1634,7 @@ Commits:
 
 ----------------------------------------------
 
+
 Title: Version 1.1
 
 Commits:
@@ -1294,6 +1645,7 @@ Commits:
 >Date: 2021-05-29 00:46:55 +0200 
 
 ----------------------------------------------
+
 
 Title: Rename explore.version to exploration.version
 
@@ -1306,6 +1658,7 @@ Commits:
 
 ----------------------------------------------
 
+
 Title: Update README.md
 
 Commits:
@@ -1316,6 +1669,7 @@ Commits:
 >Date: 2021-05-28 23:19:54 +0200 
 
 ----------------------------------------------
+
 
 Title: Example picture
 
@@ -1328,6 +1682,7 @@ Commits:
 
 ----------------------------------------------
 
+
 Title: Add files via upload
 
 Commits:
@@ -1338,6 +1693,7 @@ Commits:
 >Date: 2021-05-28 23:19:00 +0200 
 
 ----------------------------------------------
+
 
 Title: Update explore.version
 
@@ -1350,6 +1706,7 @@ Proper versioning link```
 
 ----------------------------------------------
 
+
 Title: Update README.md
 
 Commits:
@@ -1360,6 +1717,7 @@ Added error clarification```
 >Date: 2021-05-28 09:29:28 +0200 
 
 ----------------------------------------------
+
 
 Title: Update README.md
 
@@ -1372,6 +1730,7 @@ Commits:
 
 ----------------------------------------------
 
+
 Title: Update README.md
 
 Commits:
@@ -1382,6 +1741,7 @@ Commits:
 >Date: 2021-05-27 23:30:18 +0200 
 
 ----------------------------------------------
+
 
 Title: Mod logo
 
@@ -1394,6 +1754,7 @@ Commits:
 
 ----------------------------------------------
 
+
 Title: Update README.md
 
 Commits:
@@ -1404,6 +1765,7 @@ Commits:
 >Date: 2021-05-27 22:02:24 +0200 
 
 ----------------------------------------------
+
 
 Title: Update README.md
 
@@ -1416,6 +1778,7 @@ Commits:
 
 ----------------------------------------------
 
+
 Title: Update README.md
 
 Commits:
@@ -1426,6 +1789,7 @@ Commits:
 >Date: 2021-05-27 22:00:41 +0200 
 
 ----------------------------------------------
+
 
 Title: Update README.md
 
@@ -1438,6 +1802,7 @@ Commits:
 
 ----------------------------------------------
 
+
 Title: Add files via upload
 
 Commits:
@@ -1448,6 +1813,7 @@ Commits:
 >Date: 2021-05-27 21:57:43 +0200 
 
 ----------------------------------------------
+
 
 Title: Update README.md
 
@@ -1460,6 +1826,7 @@ Commits:
 
 ----------------------------------------------
 
+
 Title: Update README.md
 
 Commits:
@@ -1470,6 +1837,7 @@ Commits:
 >Date: 2021-05-27 21:31:20 +0200 
 
 ----------------------------------------------
+
 
 Title: Update README.md
 
@@ -1482,6 +1850,7 @@ Commits:
 
 ----------------------------------------------
 
+
 Title: Update README.md
 
 Commits:
@@ -1492,6 +1861,7 @@ Commits:
 >Date: 2021-05-27 21:29:33 +0200 
 
 ----------------------------------------------
+
 
 Title: Add files via upload
 
@@ -1504,6 +1874,7 @@ Commits:
 
 ----------------------------------------------
 
+
 Title: Add files via upload
 
 Commits:
@@ -1514,6 +1885,7 @@ Commits:
 >Date: 2021-05-27 20:22:42 +0200 
 
 ----------------------------------------------
+
 
 Title: Update README.md
 
@@ -1526,6 +1898,7 @@ Commits:
 
 ----------------------------------------------
 
+
 Title: Update README.md
 
 Commits:
@@ -1536,6 +1909,7 @@ Commits:
 >Date: 2021-05-27 20:20:50 +0200 
 
 ----------------------------------------------
+
 
 Title: Update README.md
 
@@ -1548,6 +1922,7 @@ Commits:
 
 ----------------------------------------------
 
+
 Title: Update README.md
 
 Commits:
@@ -1558,6 +1933,7 @@ Commits:
 >Date: 2021-05-27 20:18:53 +0200 
 
 ----------------------------------------------
+
 
 Title: Initial commit
 
