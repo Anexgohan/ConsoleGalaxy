@@ -200,11 +200,12 @@ jobs:
   # <---------------------------------------------- Update CHANGELOGS.md on the origin repository ---------------------------------------------->
     - name: Replace and push CHANGELOGS.md
       run: |
-        git config --global user.name 'github-actions'
-        git config --global user.email 'github-actions@github.com'
+        echo ${{ github.ref }}
+        git config --global user.name 'Anexgohan'
+        git config --global user.email 'monish05m@gmail.com'
         cp folder_changelog/full/CHANGELOGS.md CHANGELOGS.md
         git add CHANGELOGS.md
-        git commit -m "Auto Bot Updated CHANGELOGS.md"
-        git push origin ${{ github.ref }}
+        git commit -m "${{ github.ref }} - Auto Bot Updated CHANGELOGS.md"
+        git push
 
   # git pull origin main
