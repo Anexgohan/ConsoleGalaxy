@@ -111,7 +111,7 @@ jobs:
         echo ${{ github.ref_name }} >> CHANGELOGS.md
         echo "Changes for version ${{ github.ref_name }}" >> CHANGELOGS.md
         echo "===========================" >> CHANGELOGS.md
-        git log HEAD~1..HEAD --pretty="format:Title: %s%n%nCommits:%n\`\`\`%n%b\`\`\`%n>By: %cn%n>Hash: %h%n>Date: %ci %n%n----------------------------------------------%n" >> AA_zipped_Folder/CHANGELOGS.md
+        git log ${{ steps.previoustag-id.outputs.tag-previous }}..${{ github.ref }} --pretty="format:Title: %s%n%nCommits:%n\`\`\`%n%b\`\`\`%n>By: %cn%n>Hash: %h%n>Date: %ci %n%n----------------------------------------------%n" >> AA_zipped_Folder/CHANGELOGS.md
 
     - name: Show CHANGELOGS
       run: cat CHANGELOGS.md
