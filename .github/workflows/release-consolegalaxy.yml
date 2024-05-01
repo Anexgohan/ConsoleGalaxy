@@ -108,13 +108,15 @@ jobs:
   # AA_zipped_Folder/CHANGELOGS.md <--- this changelog is the changelog file that will be released on the release page, it only contains the changes of the current release, (HEAD^..HEAD) means between previous and current commit. 
     - name: Create CHANGELOGS file
       run: |
-        echo ${{ github.ref_name }} >> CHANGELOGS.md
-        echo "Changes for version ${{ github.ref_name }}" >> CHANGELOGS.md
-        echo "===========================" >> CHANGELOGS.md
+        echo ${{ github.ref_name }} >> AA_zipped_Folder/CHANGELOGS.md
+        echo "Changes for version ${{ github.ref_name }}" >> AA_zipped_Folder/CHANGELOGS.md
+        echo "===========================" >> AA_zipped_Folder/CHANGELOGS.md
         git log ${{ steps.previoustag-id.outputs.tag-previous }}..${{ github.ref }} --pretty="format:Title: %s%n%nCommits:%n\`\`\`%n%b\`\`\`%n>By: %cn%n>Hash: %h%n>Date: %ci %n%n----------------------------------------------%n" >> AA_zipped_Folder/CHANGELOGS.md
 
-    - name: Show CHANGELOGS
+    - name: Show CHANGELOGS main
       run: cat CHANGELOGS.md
+    - name: Show CHANGELOGS release
+      run: cat AA_zipped_Folder/CHANGELOGS.md
     - name: list files tag:3
       run: ls -R
 
@@ -130,7 +132,7 @@ jobs:
       with:
         name: ${{ github.ref_name }}
         tag_name: ${{ github.ref }}
-        body_path: CHANGELOGS.md
+        body_path: AA_zipped_Folder/CHANGELOGS.md
         generate_release_notes: true
         append_body: true
         repository: ${{ github.repository }}
