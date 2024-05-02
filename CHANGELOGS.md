@@ -1,7 +1,32 @@
-v2.0.4
-Changes for version v2.0.4
+v2.0.5
+Changes for version v2.0.5
 ===========================
-HEAD, v2.0.4, origin/main
+HEAD, v2.0.5, origin/main
+Title: minor update
+
+Commits:
+```
+fix: version checker crash
+```
+>By: Anexgohan
+>Hash: 12528c9
+>Date: 2024-05-02 15:12:53 +0530 
+
+----------------------------------------------
+
+
+Title: v2.0.4 - Auto Bot Updated CHANGELOGS.md
+
+Commits:
+```
+```
+>By: github-actions[bot]
+>Hash: 7a6340c
+>Date: 2024-05-02 08:33:16 +0000 
+
+----------------------------------------------
+
+v2.0.4
 Title: Release Candidate v2.0.4
 
 Commits:
