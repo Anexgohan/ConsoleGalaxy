@@ -1,7 +1,45 @@
-v2.0.0
-Changes for version v2.0.0
+v2.0.1
+Changes for version v2.0.1
 ===========================
-HEAD, v2.0.0
+HEAD, v2.0.1, origin/main
+Title: minor update
+
+Commits:
+```
+fix: version numbers
+fix: mod_info had outdated entries
+```
+>By: Anexgohan
+>Hash: 7728107
+>Date: 2024-05-02 08:00:17 +0530 
+
+----------------------------------------------
+
+
+Title: Merge branch 'main' of https://github.com/Anexgohan/ConsoleGalaxy
+
+Commits:
+```
+```
+>By: Anexgohan
+>Hash: 9e83c05
+>Date: 2024-05-02 07:30:50 +0530 
+
+----------------------------------------------
+
+
+Title: v2.0.0 - Auto Bot Updated CHANGELOGS.md
+
+Commits:
+```
+```
+>By: github-actions[bot]
+>Hash: 0698942
+>Date: 2024-05-02 01:59:53 +0000 
+
+----------------------------------------------
+
+v2.0.0
 Title: Release Candidate v2.0.0
 
 Commits:
@@ -23,7 +61,7 @@ deprecated: Incompatible with Original
 
 ----------------------------------------------
 
-origin/main
+
 Title: v1.2.22 - Auto Bot Updated CHANGELOGS.md
 
 Commits:
