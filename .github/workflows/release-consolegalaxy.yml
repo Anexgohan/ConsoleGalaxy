@@ -24,6 +24,7 @@ jobs:
           exit 1
         fi
 
+
 # <================================================ Create changelog Job ================================================>
 # we are creating two separate changelog files, one for the repository and one for the release page:
   create-changelog:
@@ -88,6 +89,7 @@ jobs:
         find ./ | grep -iE "CHANGELOGS.md|folder_changelog"
         echo "2-----------------2"
         ls -R ${{ github.workspace }}
+
 
 # <================================================ Release Job ================================================>
 # start the release jobs
@@ -191,6 +193,7 @@ jobs:
     - name: list files tag:4
       run: ls -R
 
+      
 # <================================================ Update-Repository ================================================>
 # start the release jobs
   Update-Repository:
@@ -216,30 +219,6 @@ jobs:
         ls -R
         echo "1-----------------1"
         find ./ | grep -iE "CHANGELOGS.md|folder_changelog"
-        echo "2-----------------2"
-        echo ${{ github.ref_name }}
-        echo ${{ github.ref }}
-        echo ${{ github.repository }}
-        echo ${{ github.workspace }}
-        echo ${{ github.repository_owner }}
-        echo ${{ github.head_ref }}
-        echo ${{ github.base_ref }}
-        echo ${{ github.ref_type }}
-        echo ${{ github.event_name }}
-        echo ${{ github.event_path }}
-        echo ${{ github.sha }}
-
-  
-  # # <---------------------------------------------- Update CHANGELOGS.md on the origin repository ---------------------------------------------->
-  #   - name: Replace and push CHANGELOGS.md
-  #     uses: EndBug/add-and-commit@v9
-  #     with:
-  #       add: 'folder_changelog/full/CHANGELOGS.md'
-  #       cwd: '.'
-  #       message: "${{ github.ref_name }} - Auto Bot Updated CHANGELOGS.md"
-  #       author_name: "github-actions[bot]"
-  #       author_email: no-reply@dontmailme.org
-  #       push: origin HEAD:refs/heads/main
 
   # <---------------------------------------------- Update CHANGELOGS.md on the origin repository ---------------------------------------------->
     - name: Replace and push CHANGELOGS.md
@@ -252,5 +231,4 @@ jobs:
         git commit -m "${{ github.ref_name }} - Auto Bot Updated CHANGELOGS.md"
         git push origin HEAD:refs/heads/main
 
-    # git push origin HEAD:refs/heads/main
     # git pull origin main
