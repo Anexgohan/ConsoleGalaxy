@@ -255,4 +255,4 @@ jobs:
         message: "${{ github.ref_name }} - Auto Bot Updated CHANGELOGS.md"
         author_name: "github-actions[bot]"
         author_email: no-reply@dontmailme.org
-        push: true
+        push: origin HEAD:main
