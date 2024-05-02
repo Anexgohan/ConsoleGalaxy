@@ -203,7 +203,7 @@ jobs:
       with:
         token: ${{ secrets.PAT_ANEXGOHAN }}
         repository: ${{ github.repository }}
-        # ref: ${{ github.ref }}
+        ref: refs/heads/main
   
   # <---------------------------------------------- Download artifacts ---------------------------------------------->
     - name: Download changelog-full artifact
@@ -250,7 +250,7 @@ jobs:
         cp folder_changelog/full/CHANGELOGS.md CHANGELOGS.md
         git add CHANGELOGS.md
         git commit -m "${{ github.ref_name }} - Auto Bot Updated CHANGELOGS.md"
-        git push
+        git push origin HEAD:<name-of-remote-branch>
 
     # git push origin HEAD:refs/heads/main
     # git pull origin main
