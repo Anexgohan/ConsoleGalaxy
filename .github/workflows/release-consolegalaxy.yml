@@ -206,7 +206,7 @@ jobs:
       with:
         token: ${{ secrets.PAT_ANEXGOHAN }}
         repository: ${{ github.repository }}
-        ref: refs/heads/main
+        # ref: refs/heads/main
   
   # <---------------------------------------------- Download artifacts ---------------------------------------------->
     - name: Download changelog-full artifact

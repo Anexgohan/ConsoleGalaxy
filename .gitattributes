@@ -1,0 +1,14 @@
+# The .gitattributes file you've selected is used to specify the files or paths that should be ignored when creating an archive of your repository (like a ZIP or TAR file). 
+# The export-ignore attribute tells Git not to include the specified files or paths in the archive.
+# ignore from source code zip
+
+.git export-ignore
+#.github export-ignore
+.idea export-ignore
+.run export-ignore
+.vscode export-ignore
+#*LICENSE export-ignore
+*license.txt export-ignore
+#README.md export-ignore
+#*package.json export-ignore
+#*package-lock.json export-ignore
