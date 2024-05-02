@@ -225,6 +225,7 @@ jobs:
       with:
         token: ${{ secrets.PAT_ANEXGOHAN }}
         repository: ${{ github.repository }}
+        ref: ${{ github.ref }}
   
   # <---------------------------------------------- Download artifacts ---------------------------------------------->
     - name: Download changelog-full artifact
@@ -238,13 +239,18 @@ jobs:
         echo "1-----------------1"
         find ./ | grep -iE "CHANGELOGS.md|folder_changelog"
         echo "2-----------------2"
-        echo ${{ github.head_ref }}
         echo ${{ github.ref_name }}
         echo ${{ github.ref }}
         echo ${{ github.repository }}
         echo ${{ github.workspace }}
         echo ${{ github.repository_owner }}
+        echo ${{ github.head_ref }}
         echo ${{ github.base_ref }}
+        echo ${{ github.ref_type }}
+        echo ${{ github.event_name }}
+        echo ${{ github.event_path }}
+        echo ${{ github.sha }}
+
   
   # <---------------------------------------------- Update CHANGELOGS.md on the origin repository ---------------------------------------------->
     - name: Replace and push CHANGELOGS.md
@@ -255,4 +261,4 @@ jobs:
         message: "${{ github.ref_name }} - Auto Bot Updated CHANGELOGS.md"
         author_name: "github-actions[bot]"
         author_email: no-reply@dontmailme.org
-        push: origin HEAD:${{ github.ref }}
+        push: origin HEAD:refs/heads/main
