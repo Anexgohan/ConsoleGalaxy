@@ -191,28 +191,6 @@ jobs:
     - name: list files tag:4
       run: ls -R
 
-  # # update the changelog file in the repository, please make a pull request locally after this
-  #   - name: Update resources
-  #     uses: test-room-7/action-update-file@v1
-  #     with:
-  #         file-path: CHANGELOGS.md
-  #         commit-msg: Update resources
-  #         github-token: ${{ secrets.GITHUB_TOKEN }}
-
-  # <---------------------------------------------- Update CHANGELOGS.md on the origin repository ---------------------------------------------->
-    # - name: Replace and push CHANGELOGS.md
-    #   run: |
-    #     echo ${{ github.ref }}
-    #     git config --global user.name 'Anexgohan'
-    #     git config --global user.email 'monish05m@gmail.com'
-    #     cp folder_changelog/full/CHANGELOGS.md CHANGELOGS.md
-    #     git add CHANGELOGS.md
-    #     git commit -m "${{ github.ref_name }} - Auto Bot Updated CHANGELOGS.md"
-    #     git push
-
-    # git push origin HEAD:refs/heads/main
-    # git pull origin main
-
 # <================================================ Update-Repository ================================================>
 # start the release jobs
   Update-Repository:
@@ -225,7 +203,7 @@ jobs:
       with:
         token: ${{ secrets.PAT_ANEXGOHAN }}
         repository: ${{ github.repository }}
-        ref: ${{ github.ref }}
+        # ref: ${{ github.ref }}
   
   # <---------------------------------------------- Download artifacts ---------------------------------------------->
     - name: Download changelog-full artifact
@@ -252,13 +230,27 @@ jobs:
         echo ${{ github.sha }}
 
   
+  # # <---------------------------------------------- Update CHANGELOGS.md on the origin repository ---------------------------------------------->
+  #   - name: Replace and push CHANGELOGS.md
+  #     uses: EndBug/add-and-commit@v9
+  #     with:
+  #       add: 'folder_changelog/full/CHANGELOGS.md'
+  #       cwd: '.'
+  #       message: "${{ github.ref_name }} - Auto Bot Updated CHANGELOGS.md"
+  #       author_name: "github-actions[bot]"
+  #       author_email: no-reply@dontmailme.org
+  #       push: origin HEAD:refs/heads/main
+
   # <---------------------------------------------- Update CHANGELOGS.md on the origin repository ---------------------------------------------->
     - name: Replace and push CHANGELOGS.md
-      uses: EndBug/add-and-commit@v9
-      with:
-        add: 'folder_changelog/full/CHANGELOGS.md'
-        cwd: '.'
-        message: "${{ github.ref_name }} - Auto Bot Updated CHANGELOGS.md"
-        author_name: "github-actions[bot]"
-        author_email: no-reply@dontmailme.org
-        push: origin HEAD:refs/heads/main
+      run: |
+        echo ${{ github.ref }}
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email 'no-reply@dontmailme.org'
+        cp folder_changelog/full/CHANGELOGS.md CHANGELOGS.md
+        git add CHANGELOGS.md
+        git commit -m "${{ github.ref_name }} - Auto Bot Updated CHANGELOGS.md"
+        git push
+
+    # git push origin HEAD:refs/heads/main
+    # git pull origin main
