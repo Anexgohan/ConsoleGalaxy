@@ -1,7 +1,41 @@
-v2.0.2
-Changes for version v2.0.2
+v2.0.4
+Changes for version v2.0.4
 ===========================
-HEAD, v2.0.2, origin/main
+HEAD, v2.0.4, origin/main
+Title: Release Candidate v2.0.4
+
+Commits:
+```
+fix: code refactor
+fix: removed old redundant entries
+fix: minimized the scope of the mod for better end experience
+fix: removed broken or half finished code entries
+bug: extensive bug fixing to remove crashes, should be stable now for main game
+docs: GitHub actions overhaul to make the release cycle smoother and error checking.
+
+feat: fully supports Tri-OS mod Manager
+
+deprecated: Incompatible with Original
+```
+>By: Anexgohan
+>Hash: 50fef80
+>Date: 2024-05-02 14:02:10 +0530 
+
+----------------------------------------------
+
+
+Title: v2.0.2 - Auto Bot Updated CHANGELOGS.md
+
+Commits:
+```
+```
+>By: github-actions[bot]
+>Hash: b450ac7
+>Date: 2024-05-02 03:04:35 +0000 
+
+----------------------------------------------
+
+v2.0.2
 Title: Release Candidate v2.0.2
 
 Commits:
