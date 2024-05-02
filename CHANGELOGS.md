@@ -1,7 +1,232 @@
-v1.2.7
-Changes for version v1.2.7
+v1.2.22
+Changes for version v1.2.22
 ===========================
-HEAD, v1.2.7, origin/main
+HEAD, v1.2.22, origin/main
+Title: main
+
+Commits:
+```
+refs main
+```
+>By: Anexgohan
+>Hash: 716094f
+>Date: 2024-05-02 07:00:58 +0530 
+
+----------------------------------------------
+
+v1.2.21
+Title: back to basics
+
+Commits:
+```
+manual is king
+```
+>By: Anexgohan
+>Hash: 3a6dad7
+>Date: 2024-05-02 06:56:28 +0530 
+
+----------------------------------------------
+
+v1.2.20
+Title: test 13
+
+Commits:
+```
+phew
+```
+>By: Anexgohan
+>Hash: 38d42fc
+>Date: 2024-05-02 06:51:20 +0530 
+
+----------------------------------------------
+
+
+Title: v1.2.19 - Auto Bot Updated CHANGELOGS.md
+
+Commits:
+```
+```
+>By: github-actions[bot]
+>Hash: 8eb977e
+>Date: 2024-05-02 01:10:59 +0000 
+
+----------------------------------------------
+
+v1.2.19
+Title: test
+
+Commits:
+```
+test
+```
+>By: Anexgohan
+>Hash: 543873b
+>Date: 2024-05-02 06:38:31 +0530 
+
+----------------------------------------------
+
+v1.2.17
+Title: ref
+
+Commits:
+```
+origin HEAD:${{ github.ref }}
+```
+>By: Anexgohan
+>Hash: 5ca8097
+>Date: 2024-05-02 06:31:08 +0530 
+
+----------------------------------------------
+
+v1.2.16
+Title: Release Candidate
+
+Commits:
+```
+fix: code refactor
+fix: removed old redundant entries
+fix: minimized the scope of the mod for better end experience
+fix: removed broken or half finished code entries
+bug: extensive bug fixing to remove crashes, should be stable now for main game
+docs: github actions overhaul to make the release cycle smoother and error checking.
+
+feat: fully supports Tri-OS mod Manager
+```
+>By: Anexgohan
+>Hash: 680797d
+>Date: 2024-05-02 06:21:01 +0530 
+
+----------------------------------------------
+
+v1.2.15
+Title: test 12
+
+Commits:
+```
+wip
+```
+>By: Anexgohan
+>Hash: b3d3b28
+>Date: 2024-05-02 06:15:52 +0530 
+
+----------------------------------------------
+
+v1.2.14
+Title: pat
+
+Commits:
+```
+test
+```
+>By: Anexgohan
+>Hash: 1d17a56
+>Date: 2024-05-02 05:26:50 +0530 
+
+----------------------------------------------
+
+v1.2.13
+Title: v1.2.13
+
+Commits:
+```
+garbage
+```
+>By: Anexgohan
+>Hash: 276ee3b
+>Date: 2024-05-02 05:00:24 +0530 
+
+----------------------------------------------
+
+v1.2.12
+Title: v1.2.12
+
+Commits:
+```
+```
+>By: Anexgohan
+>Hash: 1bf00ba
+>Date: 2024-05-02 04:41:32 +0530 
+
+----------------------------------------------
+
+v1.2.11
+Title: test 12
+
+Commits:
+```
+test fail revert
+```
+>By: Anexgohan
+>Hash: d0fc677
+>Date: 2024-05-02 04:23:17 +0530 
+
+----------------------------------------------
+
+v1.2.10
+Title: test 11
+
+Commits:
+```
+default test
+```
+>By: Anexgohan
+>Hash: 48feabb
+>Date: 2024-05-02 04:02:15 +0530 
+
+----------------------------------------------
+
+v1.2.9
+Title: test 10
+
+Commits:
+```
+fix: switched to "stefanzweifel/git-auto-commit-action" as a test
+```
+>By: Anexgohan
+>Hash: 7b8a6a2
+>Date: 2024-05-02 03:24:19 +0530 
+
+----------------------------------------------
+
+
+Title: test 09
+
+Commits:
+```
+fix: switched to "stefanzweifel/git-auto-commit-action" as a test
+```
+>By: Anexgohan
+>Hash: 2eab77e
+>Date: 2024-05-02 03:22:33 +0530 
+
+----------------------------------------------
+
+v1.2.8
+Title: test 08
+
+Commits:
+```
+more testing
+```
+>By: Anexgohan
+>Hash: d2f0ef0
+>Date: 2024-05-02 02:28:14 +0530 
+
+----------------------------------------------
+
+
+Title: v1.2.7 - Auto Bot Updated CHANGELOGS.md
+
+Commits:
+```
+```
+>By: Anexgohan
+>Hash: 8ca0412
+>Date: 2024-05-01 20:52:50 +0000 
+
+----------------------------------------------
+
+v1.2.7
 Title: Public Release
 
 Commits:
