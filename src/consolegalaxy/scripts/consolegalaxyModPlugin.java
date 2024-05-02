@@ -63,12 +63,5 @@ public class consolegalaxyModPlugin extends BaseModPlugin {
             }
             Global.getLogger(consolegalaxyModPlugin.class).error(e.getMessage() + System.lineSeparator() + stackTrace);
         }
-
-//        Global.getSector().addTransientScript(new ExplorationEveryFrame());
-
-//        Global.getSector().getListenerManager().addListener(new PlanetaryConditionsListener(), true);
-//        Global.getSector().getListenerManager().addListener(new EntityDiscoveryListener(), true);
-//        Global.getSector().getListenerManager().addListener(new LocationChangeListener(), true);
-//        Global.getSector().getListenerManager().addListener(new PlanetDiscoveryListener(), true);
     }
 }

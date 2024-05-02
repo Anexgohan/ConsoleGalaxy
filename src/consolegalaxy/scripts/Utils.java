@@ -1,14 +1,14 @@
 package consolegalaxy.scripts;
 
-// import com.fs.starfarer.api.campaign.StarSystemAPI;
+import com.fs.starfarer.api.campaign.StarSystemAPI;
 import com.fs.starfarer.api.impl.campaign.procgen.StarSystemGenerator;
 import com.fs.starfarer.api.util.Pair;
 import org.lazywizard.console.Console;
-// import org.lwjgl.util.vector.Vector2f;
+import org.lwjgl.util.vector.Vector2f;
 
-// import java.util.Arrays;
-// import java.util.HashMap;
-// import java.util.Map;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class Utils {

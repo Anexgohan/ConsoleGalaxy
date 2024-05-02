@@ -26,6 +26,7 @@ public class SystemInRange implements BaseCommand {
     protected static boolean foundSystemsOverlapping = false;
 
     // Formaters
+    // TODO print planet count in separate row or separate line?
     protected static final String STRING_FORMAT_OBJECTS = "|%-40s|"; // force to the left
     protected static final int TITLE_CELL_SIZE = consolegalaxyModPlugin.MAX_TABLE_WIDTH;
     protected static final int CONSTELLATION_CELL_SIZE = 25;
@@ -231,7 +232,6 @@ public class SystemInRange implements BaseCommand {
             Console.showMessage(String.format("|%"+TITLE_CELL_SIZE+"s|", Utils.centerText("No system in range of both the Cryosleeper and the Coronal tap.", TITLE_CELL_SIZE)));
             Console.showMessage(SEPARATOR);
         } else {
-            //  get rid of them
             sortAndPrintOutput(tmp);
         }
     }

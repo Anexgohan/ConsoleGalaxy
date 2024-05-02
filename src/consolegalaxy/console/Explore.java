@@ -17,6 +17,14 @@ import consolegalaxy.scripts.UtilClasses.SolarSystem;
 import consolegalaxy.scripts.UtilClasses.Planet;
 import consolegalaxy.scripts.consolegalaxyModPlugin;
 
+// TODO IMPORTANT https://fractalsoftworks.com/forum/index.php?topic=17103.msg320152#msg320152
+//  * Cryosleeper in range of planet
+//  * Habitable Planet
+//  * Low Hazard
+//  * Very rich planet
+//  * Lots of planets in the system
+// TODO kod Explore ubaciti Moon u header?
+
 public class Explore implements BaseCommand {
 
     protected static boolean foundAdequateSystem = true;
@@ -75,7 +83,7 @@ public class Explore implements BaseCommand {
         int nrOfStars = 0;
         String pulsar_blackhole = "";
 
-//        boolean nebula = false;
+        boolean nebula = false; // TODO filter by nebula?
 
 //        Console.showMessage("Trying getStringTypeOfSystemAndStarNumber");
         Pair<String, Integer> result = Utils.getStringTypeOfSystemAndStarNumber(starSystem.getType());
@@ -153,6 +161,7 @@ public class Explore implements BaseCommand {
         }
         localSolarSystem.setStableLocCount(_stableLocs);
 
+        // TODO Distinguish moons and planets and sort accordingly
 //        Console.showMessage("Iterating over planets");
         for (PlanetAPI planet : starSystem.getPlanets()) {
             if (!planet.isStar() && !planet.isNormalStar()) {
@@ -178,7 +187,8 @@ public class Explore implements BaseCommand {
                 }
                 localPlanet.setHazard(_hazard);
 
-//                MarketAPI.SurveyLevel planetSurveyLevel = planetMarket.getSurveyLevel();
+                // TODO unused
+                MarketAPI.SurveyLevel planetSurveyLevel = planetMarket.getSurveyLevel();
                 // set survey lvl to FULL if the player specified
                 if (consolegalaxyModPlugin.playerSurveyAll) planetMarket.setSurveyLevel(MarketAPI.SurveyLevel.FULL);
                 // get all planet conditions
@@ -346,6 +356,7 @@ public class Explore implements BaseCommand {
         String secondRow = "";
 
         if (conditions.length() > PLANET_CONDITIONS_CELL_SIZE) {
+            // TODO check of the two last characters before the split are a white space, so that we dont leave a signel character in the first row
 //            if (_constellation.substring(CONSTELLATION_CELL_SIZE - 1, CONSTELLATION_CELL_SIZE).equalsIgnoreCase(" ") ||
 //                    _constellation.substring(CONSTELLATION_CELL_SIZE - 2, CONSTELLATION_CELL_SIZE -1).equalsIgnoreCase(" ")){
 //                addDash = "-";
@@ -493,12 +504,14 @@ public class Explore implements BaseCommand {
         } else {
             sortAndPrintOutput(AdequateSolarSystems);
         }
+
         Console.showMessage(String.format("|%" + consolegalaxyModPlugin.MAX_TABLE_WIDTH + "s|", Utils.centerText(" ", consolegalaxyModPlugin.MAX_TABLE_WIDTH)));
         Console.showMessage(String.format("|%" + consolegalaxyModPlugin.MAX_TABLE_WIDTH + "s|", Utils.centerText("END OF QUERY", consolegalaxyModPlugin.MAX_TABLE_WIDTH)));
         Console.showMessage(String.format("|%" + consolegalaxyModPlugin.MAX_TABLE_WIDTH + "s|", Utils.centerText(" ", consolegalaxyModPlugin.MAX_TABLE_WIDTH)));
         Console.showMessage(SEPARATOR + "\n");
 
         // reset value with each command
+
         consolegalaxyModPlugin.playerSurveyAll = false;
         consolegalaxyModPlugin.playerPlanetCount = 1;
         consolegalaxyModPlugin.excludeClaimedSystems = false;

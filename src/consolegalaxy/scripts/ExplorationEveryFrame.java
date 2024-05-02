@@ -4,11 +4,13 @@ import com.fs.starfarer.api.EveryFrameScript;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.*;
 import com.fs.starfarer.api.campaign.econ.MarketConditionAPI;
+// TODO mozda za obavestenja poput misija
 import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.util.Misc;
 import org.lwjgl.util.vector.Vector2f;
 import java.util.HashMap;
 import java.util.HashSet;
+
 
 public class ExplorationEveryFrame implements EveryFrameScript {
 
@@ -16,7 +18,7 @@ public class ExplorationEveryFrame implements EveryFrameScript {
     protected IntervalUtil interval = new IntervalUtil(1.0f, 3.0f);
     protected boolean notRunYet = true;
     protected boolean gameSpeedChanged = false;
-    //  every 5 interval passes do X
+
     protected int counter = 0;
     protected SectorAPI sector;
     protected CampaignFleetAPI playerFleet;
@@ -45,6 +47,7 @@ public class ExplorationEveryFrame implements EveryFrameScript {
         if (!Global.getSector().isInNewGameAdvance() && !Global.getSector().getCampaignUI().isShowingMenu() &&
                 !Global.getSector().getCampaignUI().isShowingDialog() && interval.intervalElapsed()) {
 
+            // TODO ne radi kako treba
             Utils.showNotification("Is time fast? " + Global.getSector().isFastForwardIteration());
 
             if (notRunYet) {
