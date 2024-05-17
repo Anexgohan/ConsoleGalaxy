@@ -3,12 +3,12 @@
     "name": "Console Galaxy",
     "author": "Anexgohan",
     "utility": "true",
-    "version": { "major": "2", "minor": "0", "patch": "4" },
+    "version": { "major": "2", "minor": "0", "patch": "6" },
     "description": "Search for systems with a certain number of planets and conditions, using Console Commands",
     "gameVersion": "0.97a-RC11",
     "dependencies":  [
       {"id": "lw_console", "name": "Console Commands"}
     ],
-    "jars": ["jars/Console Galaxy.jar"],
+    "jars": ["jars/consolegalaxy.jar"],
     "modPlugin": "consolegalaxy.scripts.consolegalaxyModPlugin"
 }

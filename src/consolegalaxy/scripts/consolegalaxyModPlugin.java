@@ -8,11 +8,11 @@ import consolegalaxy.campaign.listeners.PlanetaryConditionsListener;
 import consolegalaxy.campaign.listeners.PlanetDiscoveryListener;
 import org.json.JSONObject;
 
-@SuppressWarnings("unused")
+
 public class consolegalaxyModPlugin extends BaseModPlugin {
 
     private static boolean settingsAlreadyRead = false;
-    public static final String ID = "exploration";
+    public static final String ID = "consolegalaxy";
     public static final String SETTINGS_PATH = "data/config/settings.json";
 
     public static boolean enableChatterCompanion; // unused

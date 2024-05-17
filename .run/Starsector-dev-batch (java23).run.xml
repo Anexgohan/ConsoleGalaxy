@@ -1,10 +1,10 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Starsector-batch" type="BatchConfigurationType" factoryName="Batch">
+  <configuration default="false" name="Starsector-dev-batch (java23)" type="BatchConfigurationType" factoryName="Batch">
     <module name="Anex Weapons" />
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../starsector-core" />
     <option name="PARENT_ENVS" value="true" />
-    <option name="SCRIPT_NAME" value="starsector.bat" />
+    <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../Miko_Rouge.bat" />
     <option name="PARAMETERS" value="" />
     <method v="2" />
   </configuration>
