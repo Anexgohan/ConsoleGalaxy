@@ -1,7 +1,34 @@
-v2.0.5
-Changes for version v2.0.5
+v2.0.6
+Changes for version v2.0.6
 ===========================
-HEAD, v2.0.5, origin/main
+HEAD, v2.0.6, origin/main
+Title: v2.0.6
+
+Commits:
+```
+fix: table was not rendering properly
+fix: long list was getting cut
+bug: table not getting set properly
+feat: new implementation of tables```
+>By: Anexgohan
+>Hash: c294cd8
+>Date: 2024-05-17 17:10:21 +0530 
+
+----------------------------------------------
+
+
+Title: v2.0.5 - Auto Bot Updated CHANGELOGS.md
+
+Commits:
+```
+```
+>By: github-actions[bot]
+>Hash: 26c0305
+>Date: 2024-05-02 09:44:01 +0000 
+
+----------------------------------------------
+
+v2.0.5
 Title: minor update
 
 Commits:
