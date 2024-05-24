@@ -51,7 +51,7 @@ jobs:
         echo ${{ github.ref_name }} > folder_changelog/full/CHANGELOGS.md
         echo "Changes for version ${{ github.ref_name }}" >> folder_changelog/full/CHANGELOGS.md
         echo "===========================" >> folder_changelog/full/CHANGELOGS.md
-        git log -1000 --pretty="format:%D%nTitle: %s%n%nCommits:%n\`\`\`%n%b\`\`\`%n>By: %cn%n>Hash: %h%n>Date: %ci %n%n----------------------------------------------%n" | sed 's/tag: //g' >> folder_changelog/full/CHANGELOGS.md
+        git log -1000 --pretty="format:%D%nTitle: %s%n%nCommits:%n\`\`\`%n%b%n\`\`\`%n>By: %cn%n>Hash: %h%n>Date: %ci %n%n----------------------------------------------%n" | sed 's/tag: //g' >> folder_changelog/full/CHANGELOGS.md
 
   # <---------------------------------------------- create short changelogs ---------------------------------------------->
   # make a CHANGELOGS.md file for the release and mod manager
@@ -61,7 +61,7 @@ jobs:
         echo ${{ github.ref_name }} > folder_changelog/short/CHANGELOGS.md
         echo "Changes for version ${{ github.ref_name }}" >> folder_changelog/short/CHANGELOGS.md
         echo "===========================" >> folder_changelog/short/CHANGELOGS.md
-        git log HEAD^..${{ github.ref_name }} --pretty="format:Title: %s%n%nCommits:%n\`\`\`%n%b\`\`\`%n>By: %cn%n>Hash: %h%n>Date: %ci %n%n----------------------------------------------%n" | sed 's/tag: //g' >> folder_changelog/short/CHANGELOGS.md
+        git log HEAD^..${{ github.ref_name }} --pretty="format:Title: %s%n%nCommits:%n\`\`\`%n%b%n\`\`\`%n>By: %cn%n>Hash: %h%n>Date: %ci %n%n----------------------------------------------%n" | sed 's/tag: //g' >> folder_changelog/short/CHANGELOGS.md
 
     - name: Show CHANGELOGS main repository, full
       run: cat folder_changelog/full/CHANGELOGS.md
