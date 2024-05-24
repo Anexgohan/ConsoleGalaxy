@@ -1,7 +1,55 @@
-v2.0.6
-Changes for version v2.0.6
+v2.0.8
+Changes for version v2.0.8
 ===========================
-HEAD, v2.0.6, origin/main
+HEAD, v2.0.8, origin/main
+Title: we have lift off again
+
+Commits:
+```
+add: new custom made icon
+fix: version checker updating
+fix: mod info now reflects the current version
+bug: crash fix
+fix: actually upload the changed files this time
+
+```
+>By: Anexgohan
+>Hash: 2f6ff49
+>Date: 2024-05-25 01:25:21 +0530 
+
+----------------------------------------------
+
+
+Title: we have lift off
+
+Commits:
+```
+add: new custom made icon
+fix: version checker updating
+fix: mod info now reflects the current version
+bug: crash fix
+
+```
+>By: Anexgohan
+>Hash: 4fb44af
+>Date: 2024-05-25 01:04:26 +0530 
+
+----------------------------------------------
+
+
+Title: v2.0.6 - Auto Bot Updated CHANGELOGS.md
+
+Commits:
+```
+
+```
+>By: github-actions[bot]
+>Hash: adb7404
+>Date: 2024-05-17 12:06:07 +0000 
+
+----------------------------------------------
+
+v2.0.6
 Title: v2.0.6
 
 Commits:
@@ -9,7 +57,8 @@ Commits:
 fix: table was not rendering properly
 fix: long list was getting cut
 bug: table not getting set properly
-feat: new implementation of tables```
+feat: new implementation of tables
+```
 >By: Anexgohan
 >Hash: c294cd8
 >Date: 2024-05-17 17:10:21 +0530 
@@ -21,6 +70,7 @@ Title: v2.0.5 - Auto Bot Updated CHANGELOGS.md
 
 Commits:
 ```
+
 ```
 >By: github-actions[bot]
 >Hash: 26c0305
@@ -34,6 +84,7 @@ Title: minor update
 Commits:
 ```
 fix: version checker crash
+
 ```
 >By: Anexgohan
 >Hash: 12528c9
@@ -46,6 +97,7 @@ Title: v2.0.4 - Auto Bot Updated CHANGELOGS.md
 
 Commits:
 ```
+
 ```
 >By: github-actions[bot]
 >Hash: 7a6340c
@@ -68,6 +120,7 @@ docs: GitHub actions overhaul to make the release cycle smoother and error check
 feat: fully supports Tri-OS mod Manager
 
 deprecated: Incompatible with Original
+
 ```
 >By: Anexgohan
 >Hash: 50fef80
@@ -80,6 +133,7 @@ Title: v2.0.2 - Auto Bot Updated CHANGELOGS.md
 
 Commits:
 ```
+
 ```
 >By: github-actions[bot]
 >Hash: b450ac7
@@ -102,6 +156,7 @@ docs: GitHub actions overhaul to make the release cycle smoother and error check
 feat: fully supports Tri-OS mod Manager
 
 deprecated: Incompatible with Original
+
 ```
 >By: Anexgohan
 >Hash: 7b525e2
@@ -115,6 +170,7 @@ Title: minor update
 Commits:
 ```
 bug: some old unused files were removed
+
 ```
 >By: Anexgohan
 >Hash: 9e6ef4c
@@ -127,6 +183,7 @@ Title: v2.0.1 - Auto Bot Updated CHANGELOGS.md
 
 Commits:
 ```
+
 ```
 >By: github-actions[bot]
 >Hash: 121ff14
@@ -141,6 +198,7 @@ Commits:
 ```
 fix: version numbers
 fix: mod_info had outdated entries
+
 ```
 >By: Anexgohan
 >Hash: 7728107
@@ -153,6 +211,7 @@ Title: Merge branch 'main' of https://github.com/Anexgohan/ConsoleGalaxy
 
 Commits:
 ```
+
 ```
 >By: Anexgohan
 >Hash: 9e83c05
@@ -165,6 +224,7 @@ Title: v2.0.0 - Auto Bot Updated CHANGELOGS.md
 
 Commits:
 ```
+
 ```
 >By: github-actions[bot]
 >Hash: 0698942
@@ -187,6 +247,7 @@ docs: GitHub actions overhaul to make the release cycle smoother and error check
 feat: fully supports Tri-OS mod Manager
 
 deprecated: Incompatible with Original
+
 ```
 >By: Anexgohan
 >Hash: ff9b531
@@ -199,6 +260,7 @@ Title: v1.2.22 - Auto Bot Updated CHANGELOGS.md
 
 Commits:
 ```
+
 ```
 >By: github-actions[bot]
 >Hash: 6c7c903
@@ -212,6 +274,7 @@ Title: main
 Commits:
 ```
 refs main
+
 ```
 >By: Anexgohan
 >Hash: 716094f
@@ -225,6 +288,7 @@ Title: back to basics
 Commits:
 ```
 manual is king
+
 ```
 >By: Anexgohan
 >Hash: 3a6dad7
@@ -238,6 +302,7 @@ Title: test 13
 Commits:
 ```
 phew
+
 ```
 >By: Anexgohan
 >Hash: 38d42fc
@@ -250,6 +315,7 @@ Title: v1.2.19 - Auto Bot Updated CHANGELOGS.md
 
 Commits:
 ```
+
 ```
 >By: github-actions[bot]
 >Hash: 8eb977e
@@ -263,6 +329,7 @@ Title: test
 Commits:
 ```
 test
+
 ```
 >By: Anexgohan
 >Hash: 543873b
@@ -276,6 +343,7 @@ Title: ref
 Commits:
 ```
 origin HEAD:${{ github.ref }}
+
 ```
 >By: Anexgohan
 >Hash: 5ca8097
@@ -296,6 +364,7 @@ bug: extensive bug fixing to remove crashes, should be stable now for main game
 docs: github actions overhaul to make the release cycle smoother and error checking.
 
 feat: fully supports Tri-OS mod Manager
+
 ```
 >By: Anexgohan
 >Hash: 680797d
@@ -309,6 +378,7 @@ Title: test 12
 Commits:
 ```
 wip
+
 ```
 >By: Anexgohan
 >Hash: b3d3b28
@@ -322,6 +392,7 @@ Title: pat
 Commits:
 ```
 test
+
 ```
 >By: Anexgohan
 >Hash: 1d17a56
@@ -335,6 +406,7 @@ Title: v1.2.13
 Commits:
 ```
 garbage
+
 ```
 >By: Anexgohan
 >Hash: 276ee3b
@@ -347,6 +419,7 @@ Title: v1.2.12
 
 Commits:
 ```
+
 ```
 >By: Anexgohan
 >Hash: 1bf00ba
@@ -360,6 +433,7 @@ Title: test 12
 Commits:
 ```
 test fail revert
+
 ```
 >By: Anexgohan
 >Hash: d0fc677
@@ -373,6 +447,7 @@ Title: test 11
 Commits:
 ```
 default test
+
 ```
 >By: Anexgohan
 >Hash: 48feabb
@@ -386,6 +461,7 @@ Title: test 10
 Commits:
 ```
 fix: switched to "stefanzweifel/git-auto-commit-action" as a test
+
 ```
 >By: Anexgohan
 >Hash: 7b8a6a2
@@ -399,6 +475,7 @@ Title: test 09
 Commits:
 ```
 fix: switched to "stefanzweifel/git-auto-commit-action" as a test
+
 ```
 >By: Anexgohan
 >Hash: 2eab77e
@@ -412,6 +489,7 @@ Title: test 08
 Commits:
 ```
 more testing
+
 ```
 >By: Anexgohan
 >Hash: d2f0ef0
@@ -424,6 +502,7 @@ Title: v1.2.7 - Auto Bot Updated CHANGELOGS.md
 
 Commits:
 ```
+
 ```
 >By: Anexgohan
 >Hash: 8ca0412
@@ -444,6 +523,7 @@ bug: extensive bug fixing to remove crashes, should be stable now for main game
 docs: github actions overhaul to make the release cycle smoother and error checking.
 
 feat: fully supports Tri-OS mod Manager
+
 ```
 >By: Anexgohan
 >Hash: 9b7eb08
@@ -464,6 +544,7 @@ bug: extensive bug fixing to remove crashes, should be stable now for main game
 docs: github actions overhaul to make the release cycle smoother and error checking.
 
 feat: fully supports Tri-OS mod Manager
+
 ```
 >By: Anexgohan
 >Hash: 36cb287
@@ -476,6 +557,7 @@ Title: v1.2.5 - Auto Bot Updated CHANGELOGS.md
 
 Commits:
 ```
+
 ```
 >By: Anexgohan
 >Hash: c22e0ea
@@ -489,6 +571,7 @@ Title: wip
 Commits:
 ```
 bug: more testing
+
 ```
 >By: Anexgohan
 >Hash: 704b80b
@@ -503,6 +586,7 @@ Commits:
 ```
 fix: push to main
 fix: push to HEAD:refs/heads/main
+
 ```
 >By: Anexgohan
 >Hash: 8b3ca10
@@ -517,6 +601,7 @@ Commits:
 ```
 fix: push to origin not working
 bug: wrong tags
+
 ```
 >By: Anexgohan
 >Hash: 10da04e
@@ -532,6 +617,7 @@ Commits:
 feat: auto commit
 feat: auto push to origin
 feat: always updated CHANGELOGS.md
+
 ```
 >By: Anexgohan
 >Hash: b4a72e5
@@ -546,6 +632,7 @@ Commits:
 ```
 fixes to auto asset generation
 new git action workflow
+
 ```
 >By: Anexgohan
 >Hash: 28916db
@@ -560,6 +647,7 @@ Commits:
 ```
 fix: list not generating
 feat: backend stuff
+
 ```
 >By: Anexgohan
 >Hash: b83c8e4
@@ -574,6 +662,7 @@ Commits:
 ```
 fix: based on some suggestion
 fix: backend fix
+
 ```
 >By: Anexgohan
 >Hash: b9d10c6
@@ -587,6 +676,7 @@ Title: based
 Commits:
 ```
 this is taking too long
+
 ```
 >By: Anexgohan
 >Hash: 7991230
@@ -600,6 +690,7 @@ Title: wip
 Commits:
 ```
 testing
+
 ```
 >By: Anexgohan
 >Hash: e0bb961
@@ -616,6 +707,7 @@ feat: pretty log generation
 feat: switched to manual logging
 bug: (```) were causing issues
 fix: used \`\ to fix
+
 ```
 >By: Anexgohan
 >Hash: 988597a
@@ -632,6 +724,7 @@ fix: requarks/changelog-action testing
 fix: wrong tagging
 bug: duplicated tags
 feat: from and to tagging
+
 ```
 >By: Anexgohan
 >Hash: 50732cc
@@ -647,6 +740,7 @@ Commits:
 fix: implementation check
 fix: to auto asset generation
 feat: git action workflow
+
 ```
 >By: Anexgohan
 >Hash: 8193a10
@@ -660,6 +754,7 @@ Title: checkout fix
 Commits:
 ```
 removed checkout
+
 ```
 >By: Anexgohan
 >Hash: 39b96b0
@@ -672,6 +767,7 @@ Title: test 04
 
 Commits:
 ```
+
 ```
 >By: Anexgohan
 >Hash: d716b41
@@ -686,6 +782,7 @@ Commits:
 ```
 fix: archival testing
 fix: release failing
+
 ```
 >By: Anexgohan
 >Hash: 4e2181f
@@ -702,6 +799,7 @@ bug: not working as intended
 fix: should work as intended
 Feat: exclude types set to include all
 docs(version): updated version numbers
+
 ```
 >By: Anexgohan
 >Hash: 1730e73
@@ -722,6 +820,7 @@ feat: forked from Explore the Galaxy
 bug: incompatible with Explore the Galaxy
 fix: removed useless stuff
 fix: removed old todo entries
+
 ```
 >By: Anexgohan
 >Hash: 8093b7e
@@ -740,6 +839,7 @@ feat: git action workflow
 fix: wrong tagging
 bug: duplicated tags
 feat: from and to tagging
+
 ```
 >By: Anexgohan
 >Hash: 1c9fb90
@@ -756,6 +856,7 @@ bug: not working as intended
 fix: should work as intended
 Feat: exclude types set to include all
 docs(version): updated version numbers
+
 ```
 >By: Anexgohan
 >Hash: ce55e29
@@ -768,6 +869,7 @@ Title: fix: changes to release action feat: switched to new methods
 
 Commits:
 ```
+
 ```
 >By: Anexgohan
 >Hash: cf3f86d
@@ -783,6 +885,7 @@ Commits:
 bug: not generating files
 fix: manually updated files
 feat: bumped auto generation
+
 ```
 >By: Anexgohan
 >Hash: b27afd4
@@ -799,6 +902,7 @@ bug: not working as intended
 fix: should work as intended
 Feat: exclude types set to include all
 docs(version): updated version numbers
+
 ```
 >By: Anexgohan
 >Hash: 4ba934a
@@ -819,6 +923,7 @@ feat: forked from Explore the Galaxy
 bug: incompatible with Explore the Galaxy
 fix: removed useless stuff
 fix: removed old todo entries
+
 ```
 >By: Anexgohan
 >Hash: adabca3
@@ -835,6 +940,7 @@ bug: not working as intended
 fix: should work as intended
 Feat: exclude types set to include all
 docs(version): updated version numbers
+
 ```
 >By: Anexgohan
 >Hash: 348d0f7
@@ -851,6 +957,7 @@ feat: pretty log generation
 feat: switched to manual logging
 bug: (```) were causing issues
 fix: used \`\ to fix
+
 ```
 >By: Anexgohan
 >Hash: 4982041
@@ -865,6 +972,7 @@ Commits:
 ```
 bug: errors
 fix: checking for exception
+
 ```
 >By: Anexgohan
 >Hash: a01e036
@@ -880,6 +988,7 @@ Commits:
 fix: implementation check
 fix: to auto asset generation
 feat: git action workflow
+
 ```
 >By: Anexgohan
 >Hash: b7b7b1a
@@ -895,6 +1004,7 @@ Commits:
 feat: testing started
 fix: code complete
 bug: at-least wont crash like the original one (hopefully)
+
 ```
 >By: Anexgohan
 >Hash: 52ac0e3
@@ -915,6 +1025,7 @@ feat: forked from Explore the Galaxy
 bug: incompatible with Explore the Galaxy
 fix: removed useless stuff
 fix: removed old todo entries
+
 ```
 >By: Anexgohan
 >Hash: 9020b53
@@ -931,6 +1042,7 @@ bug: not working as intended
 fix: should work as intended
 Feat: exclude types set to include all
 docs(version): updated version numbers
+
 ```
 >By: Anexgohan
 >Hash: 4772342
@@ -946,6 +1058,7 @@ Commits:
 bug: not generating files
 fix: manually updated files
 feat: bumped auto generation
+
 ```
 >By: Anexgohan
 >Hash: 69f5131
@@ -962,6 +1075,7 @@ fix: commits to conventionalcommits
 fix: version
 docs: updates to version numbers
 refactor: implementation of the changelog
+
 ```
 >By: Anexgohan
 >Hash: 216caf6
@@ -978,6 +1092,7 @@ fix: requarks/changelog-action testing
 fix: wrong tagging
 bug: duplicated tags
 feat: from and to tagging
+
 ```
 >By: Anexgohan
 >Hash: 87da7fe
@@ -993,6 +1108,7 @@ Commits:
 feat: implemented  requarks/changelog-action as a test, lets see
 fix: patch number mismatch
 bug: test bug
+
 ```
 >By: Anexgohan
 >Hash: daeec87
@@ -1013,6 +1129,7 @@ new forked from Explore the Galaxy
 bug incompatible with Explore the Galaxy
 fix - removed useless stuff
 fix removed old todo entries
+
 ```
 >By: Anexgohan
 >Hash: 5914c7c
@@ -1027,6 +1144,7 @@ Commits:
 ```
 fix changelog generation
 add mikepenz/release-changelog-builder-action changelog
+
 ```
 >By: Anexgohan
 >Hash: 382b0b0
@@ -1040,6 +1158,7 @@ Title: changelog implementation
 Commits:
 ```
 backend repair
+
 ```
 >By: Anexgohan
 >Hash: cabab92
@@ -1054,6 +1173,7 @@ Commits:
 ```
 deployed new action
 redundant code removed
+
 ```
 >By: Anexgohan
 >Hash: d56b97f
@@ -1068,6 +1188,7 @@ Commits:
 ```
 changes to release action
 switched to "softprops/action-gh-release"
+
 ```
 >By: Anexgohan
 >Hash: 1c1d30d
@@ -1083,6 +1204,7 @@ Commits:
 testing started
 code complete
 at-least wont crash like the original one (hopefully)
+
 ```
 >By: Anexgohan
 >Hash: daadc5a
@@ -1099,6 +1221,7 @@ forked from Explore the Galaxy
 incompatible with Explore the Galaxy
 fix - removed useless stuff
 fix: removed old todo entries
+
 ```
 >By: Anexgohan
 >Hash: 2ba4cc4
@@ -1115,6 +1238,7 @@ forked from Explore the Galaxy
 incompatible with Explore the Galaxy
 fix - removed useless stuff
 fix: removed old todo entries
+
 ```
 >By: Anexgohan
 >Hash: c485ef0
@@ -1131,6 +1255,7 @@ forked from Explore the Galaxy
 incompatible with Explore the Galaxy
 fix - removed useless stuff
 fix: removed old todo entries
+
 ```
 >By: Anexgohan
 >Hash: f770ea0
@@ -1147,6 +1272,7 @@ forked from Explore the Galaxy
 incompatible with Explore the Galaxy
 fix - removed useless stuff
 fix: removed old todo entries
+
 ```
 >By: Anexgohan
 >Hash: 2bea393
@@ -1162,6 +1288,7 @@ Commits:
 enhanced workflow
 minimized code
 changelog generation
+
 ```
 >By: Anexgohan
 >Hash: 350d063
@@ -1178,6 +1305,7 @@ forked from Explore the Galaxy
 incompatible with Explore the Galaxy
 fix - removed useless stuff
 fix: removed old todo entries
+
 ```
 >By: Anexgohan
 >Hash: 33140cf
@@ -1194,6 +1322,7 @@ forked from Explore the Galaxy
 incompatible with Explore the Galaxy
 fix - removed useless stuff
 fix: removed old todo entries
+
 ```
 >By: Anexgohan
 >Hash: 8cded33
@@ -1210,6 +1339,7 @@ forked from Explore the Galaxy
 incompatible with Explore the Galaxy
 fix - removed useless stuff
 fix: removed old todo entries
+
 ```
 >By: Anexgohan
 >Hash: 2b7687c
@@ -1224,6 +1354,7 @@ Commits:
 ```
 fixes to auto asset generation
 new git action workflow
+
 ```
 >By: Anexgohan
 >Hash: 9cc2a35
@@ -1238,6 +1369,7 @@ Commits:
 ```
 enhanced workflow
 minimized code
+
 ```
 >By: Anexgohan
 >Hash: 68fbc31
@@ -1250,6 +1382,7 @@ Title: changes
 
 Commits:
 ```
+
 ```
 >By: Anexgohan
 >Hash: 1066b4f
@@ -1262,6 +1395,7 @@ Title: test
 
 Commits:
 ```
+
 ```
 >By: Anexgohan
 >Hash: 23ddc9a
@@ -1274,6 +1408,7 @@ Title: test
 
 Commits:
 ```
+
 ```
 >By: Anexgohan
 >Hash: 801d482
@@ -1287,6 +1422,7 @@ Title: v1.0.14
 Commits:
 ```
 alt approach
+
 ```
 >By: Anexgohan
 >Hash: 3624361
@@ -1299,6 +1435,7 @@ Title: changelog generation
 
 Commits:
 ```
+
 ```
 >By: Anexgohan
 >Hash: 0cd7b2e
@@ -1313,6 +1450,7 @@ Commits:
 ```
 fixes to auto asset generation
 new git action workflow
+
 ```
 >By: Anexgohan
 >Hash: 0996a0f
@@ -1329,6 +1467,7 @@ forked from Explore the Galaxy
 incompatible with Explore the Galaxy
 fix - removed useless stuff
 fix: removed old todo entries
+
 ```
 >By: Anexgohan
 >Hash: cc4bebf
@@ -1341,6 +1480,7 @@ Title: fixed
 
 Commits:
 ```
+
 ```
 >By: Anexgohan
 >Hash: 7ea1cfd
@@ -1353,6 +1493,7 @@ Title: workflow
 
 Commits:
 ```
+
 ```
 >By: Anexgohan
 >Hash: 720621d
@@ -1365,6 +1506,7 @@ Title: v1.0.11
 
 Commits:
 ```
+
 ```
 >By: Anexgohan
 >Hash: 9fac190
@@ -1377,6 +1519,7 @@ Title: v1.0.10
 
 Commits:
 ```
+
 ```
 >By: Anexgohan
 >Hash: 4f00a42
@@ -1389,6 +1532,7 @@ Title: v1.0.10
 
 Commits:
 ```
+
 ```
 >By: Anexgohan
 >Hash: 1e3e8b1
@@ -1401,6 +1545,7 @@ Title: v1.0.9
 
 Commits:
 ```
+
 ```
 >By: Anexgohan
 >Hash: e09294b
@@ -1417,6 +1562,7 @@ forked from Explore the Galaxy
 incompatible with Explore the Galaxy
 fix - removed useless stuff
 fix: removed old todo entries
+
 ```
 >By: Anexgohan
 >Hash: 5e003b2
@@ -1429,6 +1575,7 @@ Title: 1.0.9
 
 Commits:
 ```
+
 ```
 >By: Anexgohan
 >Hash: 74424b0
@@ -1441,6 +1588,7 @@ Title: Merge branch 'main' of github.com:Anexgohan/ConsoleGalaxy
 
 Commits:
 ```
+
 ```
 >By: Anexgohan
 >Hash: 73a3836
@@ -1457,6 +1605,7 @@ forked from Explore the Galaxy
 incompatible with Explore the Galaxy
 fix - removed useless stuff
 fix: removed old todo entries
+
 ```
 >By: Anexgohan
 >Hash: 560b480
@@ -1469,6 +1618,7 @@ Title: test
 
 Commits:
 ```
+
 ```
 >By: Anexgohan
 >Hash: 06c2b43
@@ -1485,6 +1635,7 @@ forked from Explore the Galaxy
 incompatible with Explore the Galaxy
 fix - removed useless stuff
 fix: removed old todo entries
+
 ```
 >By: Anexgohan
 >Hash: b16abbf
@@ -1501,6 +1652,7 @@ forked from Explore the Galaxy
 incompatible with Explore the Galaxy
 fix - removed useless stuff
 fix: removed old todo entries
+
 ```
 >By: Anexgohan
 >Hash: 730ad3b
@@ -1517,6 +1669,7 @@ forked from Explore the Galaxy
 incompatible with Explore the Galaxy
 fix - removed useless stuff
 fix: removed old todo entries
+
 ```
 >By: Anexgohan
 >Hash: d43647f
@@ -1533,6 +1686,7 @@ forked from Explore the Galaxy
 incompatible with Explore the Galaxy
 fix - removed useless stuff
 fix: removed old todo entries
+
 ```
 >By: Anexgohan
 >Hash: e1dcb3c
@@ -1549,6 +1703,7 @@ forked from Explore the Galaxy
 incompatible with Explore the Galaxy
 fix - removed useless stuff
 fix: removed old todo entries
+
 ```
 >By: Anexgohan
 >Hash: 1b516f8
@@ -1561,6 +1716,7 @@ Title: moved some files
 
 Commits:
 ```
+
 ```
 >By: Anexgohan
 >Hash: fa45ee8
@@ -1573,6 +1729,7 @@ Title: v1.0.6
 
 Commits:
 ```
+
 ```
 >By: Anexgohan
 >Hash: 318fdaf
@@ -1585,6 +1742,7 @@ Title: v1.0.6 new faster release flow
 
 Commits:
 ```
+
 ```
 >By: Anexgohan
 >Hash: 09d8706
@@ -1597,6 +1755,7 @@ Title: v1.0.5
 
 Commits:
 ```
+
 ```
 >By: Anexgohan
 >Hash: 268d533
@@ -1609,6 +1768,7 @@ Title: v1.0.4
 
 Commits:
 ```
+
 ```
 >By: Anexgohan
 >Hash: ee6c443
@@ -1621,6 +1781,7 @@ Title: v1.0.3 release
 
 Commits:
 ```
+
 ```
 >By: Anexgohan
 >Hash: a1e4b7d
@@ -1633,6 +1794,7 @@ Title: v1.0.2
 
 Commits:
 ```
+
 ```
 >By: Anexgohan
 >Hash: 71d32fb
@@ -1645,6 +1807,7 @@ Title: v1.0.2
 
 Commits:
 ```
+
 ```
 >By: Anexgohan
 >Hash: 1714bf0
@@ -1657,6 +1820,7 @@ Title: v1.0.2
 
 Commits:
 ```
+
 ```
 >By: Anexgohan
 >Hash: 85550dc
@@ -1669,6 +1833,7 @@ Title: v1.0.2
 
 Commits:
 ```
+
 ```
 >By: Anexgohan
 >Hash: 16bd994
@@ -1681,6 +1846,7 @@ Title: release
 
 Commits:
 ```
+
 ```
 >By: Anexgohan
 >Hash: d20c577
@@ -1693,6 +1859,7 @@ Title: v1.0.2 release
 
 Commits:
 ```
+
 ```
 >By: Anexgohan
 >Hash: 6412b44
@@ -1705,6 +1872,7 @@ Title: Update README.md
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: 704e2b3
@@ -1717,6 +1885,7 @@ Title: Update README.md
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: c04c82f
@@ -1729,6 +1898,7 @@ Title: Update README.md
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: 3a037ec
@@ -1741,6 +1911,7 @@ Title: Forked from Explore the Galaxy, released as Console Galaxy v1.0.0a
 
 Commits:
 ```
+
 ```
 >By: Anexgohan
 >Hash: 82e000f
@@ -1753,6 +1924,7 @@ Title: Testing VCS
 
 Commits:
 ```
+
 ```
 >By: MilanTodorovic
 >Hash: 313b9f9
@@ -1765,6 +1937,7 @@ Title: Update README.md
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: 34a8dc7
@@ -1777,6 +1950,7 @@ Title: Version 1.2.3
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: d6205d0
@@ -1789,6 +1963,7 @@ Title: Update README.md
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: ac38f03
@@ -1801,6 +1976,7 @@ Title: Update README.md
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: 9cd5641
@@ -1813,7 +1989,8 @@ Title: Version 1.2.3
 
 Commits:
 ```
-Wildcard now supported at the start of a planetary condition: *abundant.```
+Wildcard now supported at the start of a planetary condition: *abundant.
+```
 >By: GitHub
 >Hash: 7980a1a
 >Date: 2021-06-06 10:35:09 +0200 
@@ -1825,7 +2002,8 @@ Title: Version 1.2.3
 
 Commits:
 ```
-Wildcard now supported at the start of a planetary condition: *abundant.```
+Wildcard now supported at the start of a planetary condition: *abundant.
+```
 >By: GitHub
 >Hash: 3700892
 >Date: 2021-06-06 10:33:57 +0200 
@@ -1837,6 +2015,7 @@ Title: Version 1.2.3
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: 41111ac
@@ -1849,6 +2028,7 @@ Title: Version 1.2.3
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: 7d1cbb9
@@ -1861,6 +2041,7 @@ Title: Version 1.2.2
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: d8eef6f
@@ -1873,7 +2054,8 @@ Title: Version 1.2.2
 
 Commits:
 ```
-Wildcard update```
+Wildcard update
+```
 >By: GitHub
 >Hash: 55dbc31
 >Date: 2021-06-04 23:29:54 +0200 
@@ -1885,7 +2067,8 @@ Title: Version 1.2.2
 
 Commits:
 ```
-Wildcard update```
+Wildcard update
+```
 >By: GitHub
 >Hash: 8f6d74d
 >Date: 2021-06-04 23:29:04 +0200 
@@ -1897,7 +2080,8 @@ Title: Version 1.2.2
 
 Commits:
 ```
-Wildcard update```
+Wildcard update
+```
 >By: GitHub
 >Hash: 25b1f96
 >Date: 2021-06-04 23:28:23 +0200 
@@ -1909,7 +2093,8 @@ Title: Update ExplorationModPlugin.java
 
 Commits:
 ```
-Disabled EveryFrameScript```
+Disabled EveryFrameScript
+```
 >By: GitHub
 >Hash: 2fb5005
 >Date: 2021-06-04 16:38:21 +0200 
@@ -1921,6 +2106,7 @@ Title: Add files via upload
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: 89c70c8
@@ -1933,6 +2119,7 @@ Title: Update exploration.version
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: bbcf9fb
@@ -1945,6 +2132,7 @@ Title: Update mod_info.json
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: 3f5dc5f
@@ -1957,7 +2145,8 @@ Title: Update README.md
 
 Commits:
 ```
-Better Colonies update fixed the issue```
+Better Colonies update fixed the issue
+```
 >By: GitHub
 >Hash: 1e52ebb
 >Date: 2021-06-04 14:51:08 +0200 
@@ -1969,6 +2158,7 @@ Title: Update README.md
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: d26a3a0
@@ -1981,6 +2171,7 @@ Title: Updated for Version 1.2
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: 4c0fef4
@@ -1993,6 +2184,7 @@ Title: Pics of version 1.0
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: c735e43
@@ -2005,6 +2197,7 @@ Title: Delete systeminrange_example.png
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: f903563
@@ -2017,6 +2210,7 @@ Title: Delete mod_pic.png
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: 849f8ab
@@ -2029,7 +2223,8 @@ Title: Deleting old files
 
 Commits:
 ```
-Deleting old files```
+Deleting old files
+```
 >By: GitHub
 >Hash: 72157a7
 >Date: 2021-06-04 14:16:03 +0200 
@@ -2061,7 +2256,8 @@ Version 1.2:
 2) Explore
     - Added similar type of formatting as to SystemInRange
     - New arguments: gate, stableloc=0, jumppoint=0, hazard=250
-    - Changed arguments: (full=)true -> `all`, (planet_counet=)1 -> `planets=1````
+    - Changed arguments: (full=)true -> `all`, (planet_counet=)1 -> `planets=1`
+```
 >By: GitHub
 >Hash: a490759
 >Date: 2021-06-04 14:15:22 +0200 
@@ -2073,6 +2269,7 @@ Title: Update exploration.version
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: fa5509f
@@ -2085,6 +2282,7 @@ Title: Update exploration.version
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: 5a58f3c
@@ -2097,7 +2295,8 @@ Title: Update README.md
 
 Commits:
 ```
-updated for new arguments exclude/include```
+updated for new arguments exclude/include
+```
 >By: GitHub
 >Hash: ae6a955
 >Date: 2021-05-29 10:34:31 +0200 
@@ -2109,6 +2308,7 @@ Title: Update README.md
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: 658da65
@@ -2121,6 +2321,7 @@ Title: Version 1.1
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: 8899f83
@@ -2133,6 +2334,7 @@ Title: Rename explore.version to exploration.version
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: 8e7a5ed
@@ -2145,6 +2347,7 @@ Title: Update README.md
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: 02d6def
@@ -2157,6 +2360,7 @@ Title: Example picture
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: 5f67ce5
@@ -2169,6 +2373,7 @@ Title: Add files via upload
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: 9959262
@@ -2181,7 +2386,8 @@ Title: Update explore.version
 
 Commits:
 ```
-Proper versioning link```
+Proper versioning link
+```
 >By: GitHub
 >Hash: d68ae76
 >Date: 2021-05-28 22:33:01 +0200 
@@ -2193,7 +2399,8 @@ Title: Update README.md
 
 Commits:
 ```
-Added error clarification```
+Added error clarification
+```
 >By: GitHub
 >Hash: bec914b
 >Date: 2021-05-28 09:29:28 +0200 
@@ -2205,6 +2412,7 @@ Title: Update README.md
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: bbd0bb4
@@ -2217,6 +2425,7 @@ Title: Update README.md
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: 74cd647
@@ -2229,6 +2438,7 @@ Title: Mod logo
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: e5404f7
@@ -2241,6 +2451,7 @@ Title: Update README.md
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: 45e0843
@@ -2253,6 +2464,7 @@ Title: Update README.md
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: f43b514
@@ -2265,6 +2477,7 @@ Title: Update README.md
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: d42bb39
@@ -2277,6 +2490,7 @@ Title: Update README.md
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: 98b1414
@@ -2289,6 +2503,7 @@ Title: Add files via upload
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: 86b11eb
@@ -2301,6 +2516,7 @@ Title: Update README.md
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: 7e0c4d7
@@ -2313,6 +2529,7 @@ Title: Update README.md
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: 40f23cc
@@ -2325,6 +2542,7 @@ Title: Update README.md
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: 0a8bf15
@@ -2337,6 +2555,7 @@ Title: Update README.md
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: f8c6824
@@ -2349,6 +2568,7 @@ Title: Add files via upload
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: 762125a
@@ -2361,6 +2581,7 @@ Title: Add files via upload
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: 790e917
@@ -2373,6 +2594,7 @@ Title: Update README.md
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: 9fb4fd0
@@ -2385,6 +2607,7 @@ Title: Update README.md
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: b38727c
@@ -2397,6 +2620,7 @@ Title: Update README.md
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: 516f660
@@ -2409,6 +2633,7 @@ Title: Update README.md
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: 4c1c2e8
@@ -2421,6 +2646,7 @@ Title: Initial commit
 
 Commits:
 ```
+
 ```
 >By: GitHub
 >Hash: b176877
